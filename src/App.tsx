@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
+  const baseUrl = import.meta.env.BASE_URL
   const [activeSection, setActiveSection] = useState<
     | 'home'
     | 'about'
@@ -89,7 +90,7 @@ function App() {
           title: 'PhD thesis (2018)',
           meta: 'Thesis · Robotics · 2018',
           label: 'PDF',
-          image: '/phd.jpg',
+          image: `${baseUrl}phd.jpg`,
           href: 'https://theses.hal.science/tel-01785574',
         },
       ],
@@ -102,14 +103,14 @@ function App() {
           title: 'Heart Robotics (Medium)',
           meta: 'Article · Medium',
           label: 'Article',
-          image: '/heart.png',
+          image: `${baseUrl}heart.png`,
           href: 'https://heart-robotics.medium.com/',
         },
         {
           title: 'Collaborer avec la machine',
           meta: 'Article · FNAC',
           label: 'Book page',
-          image: '/fnac.jpg',
+          image: `${baseUrl}fnac.jpg`,
           href: 'https://www.fnac.com/a14942090/Anne-Sophie-Dubey-Collaborer-avec-la-machine-quels-changements-pour-l-operateur',
         },
       ],
@@ -122,7 +123,7 @@ function App() {
           title: 'Robotique collaborative (SlideShare)',
           meta: 'Slides · SlideShare',
           label: 'Slides',
-          image: '/slides.png',
+          image: `${baseUrl}slides.png`,
           href: 'https://www.slideshare.net/La_Fabrique_Industrie/la-robotique-collaborative-comme-moyen-de-soulager-loprateur',
         },
       ],
@@ -505,7 +506,7 @@ function App() {
                   speech and perception shape human-machine engagement.
                 </p>
                 <div className="robot-image" aria-hidden="true">
-                  <img src="/nao.jpg" alt="" loading="lazy" />
+                  <img src={`${baseUrl}nao.jpg`} alt="" loading="lazy" />
                 </div>
               </div>
 
@@ -568,7 +569,7 @@ function App() {
                   functional one.
                 </p>
                 <div className="robot-image" aria-hidden="true">
-                  <img src="/pepper.jpg" alt="" loading="lazy" />
+                  <img src={`${baseUrl}pepper.jpg`} alt="" loading="lazy" />
                 </div>
               </div>
 
@@ -587,7 +588,7 @@ function App() {
                   meaningful human-robot engagement.
                 </p>
                 <div className="robot-image" aria-hidden="true">
-                  <img src="/mirokajpg" alt="" loading="lazy" />
+                  <img src={`${baseUrl}mirokajpg`} alt="" loading="lazy" />
                 </div>
               </div>
             </section>
@@ -663,7 +664,7 @@ function App() {
                   perception.
                 </p>
                 <div className="photo-grid" aria-hidden="true">
-                  <img src="/insta.png" alt="" loading="lazy" />
+                  <img src={`${baseUrl}insta.png`} alt="" loading="lazy" />
                 </div>
               </div>
 
