@@ -1,24 +1,17 @@
-# Susan Sanchez — Personal Brand Website
+# Susan Sanchez — Personal Portfolio
 
-A minimal, elegant portfolio built with React + TypeScript. It uses a bento-style layout to show skills, interests, and projects in a calm and authentic way.
+A single-page portfolio built with React + TypeScript + Vite, featuring a Midnight Sun palette, sticky sidebar navigation, and rich content sections (Publications, Social Robotics, Interests).
 
 ## Quick start
 
 1) Install dependencies
-
-- `npm install`
-
+	- `npm install`
 2) Run the app locally
-
-- `npm run dev`
-
+	- `npm run dev`
 3) Build for production
-
-- `npm run build`
-
+	- `npm run build`
 4) Preview the production build
-
-- `npm run preview`
+	- `npm run preview`
 
 ## Where to edit content
 
@@ -27,13 +20,11 @@ A minimal, elegant portfolio built with React + TypeScript. It uses a bento-styl
 
 ## Deployment (GitHub Pages)
 
-This project is ready to deploy to GitHub Pages.
+The site is published via GitHub Pages.
 
-1) Create a repository in https://github.com/ssrpo
-2) Push this project to that repo
-3) Set the base path if your repo name is not `ssrpo` (update `base` in [vite.config.ts](vite.config.ts))
-4) Build with `npm run build`
-5) Publish the `dist` folder to GitHub Pages (you can use a GitHub Action later)
+1) Ensure the `base` path in [vite.config.ts](vite.config.ts) matches your repo name
+2) Build with `npm run build`
+3) Publish the `dist` folder to GitHub Pages (or use a GitHub Action)
 
 ## Custom domain (suziesr.xyz)
 
