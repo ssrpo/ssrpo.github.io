@@ -36,4 +36,4 @@ This checklist tracks code quality, structure, and GitHub Pages best practices.
 - [x] Improve section-switch accessibility behavior (focus + announcements)
 - [x] Add meaningful alt text for informative imagery
 - [x] Add automated accessibility checks (`jest-axe` + lint a11y rules)
-- [ ] Add Lighthouse CI checks with threshold assertions
+- [x] Add Lighthouse CI checks with threshold assertions

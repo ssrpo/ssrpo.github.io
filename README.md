@@ -15,8 +15,9 @@ I built this site to share my work in robotics, software, and human-centered des
 - React 19
 - TypeScript
 - Vite
-- ESLint
-- Vitest + React Testing Library
+- ESLint (with accessibility rules)
+- Vitest + React Testing Library + jest-axe
+- Lighthouse CI
 
 ## Project structure
 
@@ -37,17 +38,23 @@ I built this site to share my work in robotics, software, and human-centered des
    - `npm run lint`
    - `npm run test`
    - `npm run build`
+   - `npm run lighthouse:ci` (requires Chrome locally; always runs in CI)
 
 ## CI and deployment
 
 - Pull requests run checks from `.github/workflows/ci.yml`.
+- Pull requests also run Lighthouse checks from `.github/workflows/lighthouse.yml`.
 - Pushes to `main` deploy the site with `.github/workflows/deploy.yml`.
+
+## Accessibility
+
+- Section switches announce changes and move focus to section headings.
+- Automated accessibility checks run in tests using `jest-axe`.
+- ESLint enforces JSX accessibility rules.
 
 ## Root URL setup (GitHub Pages)
 
 This project uses `base: '/'`, so it is ready for root hosting.
-
-To publish at `https://ssrpo.github.io/`:
 
 ## Contributing
 
