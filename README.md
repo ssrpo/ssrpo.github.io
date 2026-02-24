@@ -1,55 +1,51 @@
-# Susana Sánchez Restrepo — Personal Portfolio
+# Susana Sanchez Restrepo - Personal Website
 
-A single-page portfolio built with React + TypeScript + Vite, featuring a Midnight Sun palette, sticky sidebar navigation, and rich content sections focused on social robotics, research, and creative practice.
+A single-page portfolio built with React, TypeScript, and Vite.
 
-## Highlights
+## Tech stack
 
-- Sticky left sidebar with section navigation
-- Spotlight cursor effect with reduced-motion support
-- Publications grouped with visual thumbnails
-- Dedicated Social Robotics section (NAO, Pepper, Mirokaï)
-- Interests section with embedded media and photography
-- Accessible focus states and skip link
+- React 19
+- TypeScript
+- Vite
+- ESLint
+- GitHub Actions (CI + Pages deploy)
 
-## Quick start
+## Project structure
 
-1) Install dependencies
-	- `npm install`
-2) Run the app locally
-	- `npm run dev`
-3) Build for production
-	- `npm run build`
-4) Preview the production build
-	- `npm run preview`
+- `src/App.tsx`: app shell (state + layout wiring)
+- `src/components/Sidebar.tsx`: left navigation and social links
+- `src/components/SectionContent.tsx`: section rendering
+- `src/content/siteContent.tsx`: static content/data
+- `src/types/content.ts`: shared content types
+- `src/App.css` and `src/index.css`: styles
 
-## Where to edit content
+## Local development
 
-- Main page content lives in [src/App.tsx](src/App.tsx).
-- Styles live in [src/App.css](src/App.css) and [src/index.css](src/index.css).
+1. Install dependencies: `npm install`
+2. Start dev server: `npm run dev`
+3. Lint: `npm run lint`
+4. Build: `npm run build`
+5. Preview production build: `npm run preview`
 
-## Content sections
+## CI and deployment
 
-The site is structured into:
+- Pull requests run quality checks in `.github/workflows/ci.yml`.
+- Pushes to `main` run Pages deployment in `.github/workflows/deploy.yml`.
 
-- About
-- In the In-Between
-- Current role
-- Social robotics
-- Interests
-- Publications
+## GitHub Pages (root setup)
 
-## Deployment (GitHub Pages)
+This project is configured for root hosting with `base: '/'`.
 
-The site can be published via GitHub Pages.
+To publish at `https://ssrpo.github.io/`:
 
-1) Build with `npm run build`
-2) Publish the `dist` folder to GitHub Pages (or use a GitHub Action)
+1. Use a repository named `ssrpo.github.io`.
+2. In repository settings, enable Pages with source `GitHub Actions`.
+3. Push to `main`.
 
-## Custom domain (suziesr.xyz)
+## Custom domain (later)
 
-1) In GitHub Pages settings, add the custom domain `suziesr.xyz`
-2) Create a `CNAME` record at your DNS provider pointing to your GitHub Pages domain
+When DNS is ready for `suziesr.xyz`:
 
-## Need help?
-
-See [EXPLANATIONS.md](EXPLANATIONS.md) for beginner-friendly notes.
+1. Add `suziesr.xyz` in GitHub Pages settings.
+2. Add a `public/CNAME` file containing exactly `suziesr.xyz`.
+3. Configure DNS records at your provider to point to GitHub Pages.

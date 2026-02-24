@@ -1,36 +1,57 @@
 # Explanations (Beginner Friendly)
 
-This file explains how the website is put together and what you can safely edit.
+This file explains where to edit your website safely.
 
-## 1) The main page
+## 1) Main app shell
 
-- File: [src/App.tsx](src/App.tsx)
-- This file holds the content for your portfolio (your name, about text, projects, skills, etc.).
-- You can update the text inside the `skills`, `interests`, `projects`, and `socials` arrays.
+- File: `src/App.tsx`
+- Handles:
+  - active section state
+  - layout structure
+  - spotlight cursor effect
 
-## 2) The styles
+## 2) Page sections and navigation
 
-- File: [src/index.css](src/index.css)
-  - Global styles (background, colors, fonts).
-- File: [src/App.css](src/App.css)
-  - Layout and component styles (cards, buttons, bento grid).
+- File: `src/components/Sidebar.tsx`
+  - left panel title, section buttons, social links
+- File: `src/components/SectionContent.tsx`
+  - content for About, Current role, Publications, Interests, etc.
 
-If you change colors, the safest place is in `:root` inside `src/index.css`.
+## 3) Static content data
 
-## 3) How to update your info
+- File: `src/content/siteContent.tsx`
+- Contains reusable content arrays:
+  - social links
+  - publication groups/cards
 
-- Replace the name, subtitle, and paragraphs in `src/App.tsx`.
-- Update the email in the `mailto:` links.
-- Add or remove projects by editing the `projects` array.
+## 4) Shared types
 
-## 4) Common edits
+- File: `src/types/content.ts`
+- Keeps section IDs and content item structures typed and consistent.
 
-- Add a new card: copy any `<section className="card ...">` block.
-- Change layout: edit the grid rules in `src/App.css` under the `@media (min-width: 900px)` section.
+## 5) Styling
 
-## 5) Helpful reminders
+- File: `src/index.css`
+  - global styles (colors, focus, base typography)
+- File: `src/App.css`
+  - layout and section/component styles
 
-- Keep text short for a clean, minimal look.
-- Don’t worry about perfection — it’s okay to iterate.
+## 6) Typical edits
 
-If you want help, just tell me what you want to change and I’ll do it for you.
+- Update text content:
+  - `src/components/SectionContent.tsx`
+- Add/remove publication cards:
+  - `src/content/siteContent.tsx`
+- Add/remove social links:
+  - `src/content/siteContent.tsx`
+- Change colors or theme tokens:
+  - `src/index.css` (`:root` variables)
+
+## 7) Quality checks before pushing
+
+Run:
+
+- `npm run lint`
+- `npm run build`
+
+These are also run in GitHub Actions workflows.
