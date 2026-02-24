@@ -4,7 +4,7 @@ This checklist tracks code quality, structure, and GitHub Pages best practices.
 
 ## Phase 1: Deployment and GitHub standards
 
-- [ ] Move to root-site setup (`ssrpo.github.io` target) with `base: '/'`
+- [x] Move to root-site setup (`ssrpo.github.io` target) with `base: '/'`
 - [ ] Keep GitHub Pages deployment workflow aligned with root path
 - [ ] Add CI workflow for pull requests (`lint` + `build`) before deploy on `main`
 - [ ] Prepare custom domain handoff (`CNAME`) once DNS is ready
