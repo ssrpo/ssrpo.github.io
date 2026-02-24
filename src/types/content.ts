@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react'
 
 export type SectionId =
-  | 'home'
   | 'about'
   | 'in-between'
   | 'current'

@@ -22,7 +22,7 @@ This checklist tracks code quality, structure, and GitHub Pages best practices.
 
 ## Phase 4: Cleanup and dead-code removal
 
-- [ ] Remove unused `home` state path and unreachable UI branches
+- [x] Remove unused `home` state path and unreachable UI branches
 - [ ] Remove unused CSS selectors and keep stylesheet focused
 - [ ] Keep docs consistent with real code structure
 
