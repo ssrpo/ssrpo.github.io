@@ -49,21 +49,6 @@ This project uses `base: '/'`, so it is ready for root hosting.
 
 To publish at `https://ssrpo.github.io/`:
 
-1. Use a repository named exactly `ssrpo.github.io`.
-2. In repository settings, enable GitHub Pages with source `GitHub Actions`.
-3. Push to `main`.
-
-## Custom domain (planned)
-
-I plan to use `suziesr.xyz`.
-
-Once DNS is ready:
-
-1. Add `suziesr.xyz` in GitHub Pages settings.
-2. Add `public/CNAME` with exactly:
-   - `suziesr.xyz`
-3. Configure DNS records at the domain provider to point to GitHub Pages.
-
 ## Contributing
 
 If you want to contribute, please check `CONTRIBUTING.md`.
