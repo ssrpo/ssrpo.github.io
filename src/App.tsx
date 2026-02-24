@@ -90,7 +90,7 @@ function App() {
           title: 'PhD thesis (2018)',
           meta: 'Thesis · Robotics · 2018',
           label: 'PDF',
-          image: `${baseUrl}phd.jpg`,
+          image: `${baseUrl}phd.webp`,
           href: 'https://theses.hal.science/tel-01785574',
         },
       ],
