@@ -69,9 +69,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
-[tabindex]:focus-visible,
-.cta:focus-visible,
-.link-grid a:focus-visible {
+[tabindex]:focus-visible {
   outline: var(--ring) solid var(--focus);
   outline-offset: 3px;
 }
