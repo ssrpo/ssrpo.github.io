@@ -12,7 +12,7 @@ This checklist tracks code quality, structure, and GitHub Pages best practices.
 ## Phase 2: Performance and metadata
 
 - [x] Replace heavy static assets (especially `public/phd.jpg`) with optimized formats
-- [ ] Improve HTML metadata (`title`, description, social preview, favicon)
+- [x] Improve HTML metadata (`title`, description, social preview, favicon)
 
 ## Phase 3: Code structure and maintainability
 
