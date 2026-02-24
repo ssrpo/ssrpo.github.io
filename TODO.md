@@ -29,4 +29,4 @@ This checklist tracks code quality, structure, and GitHub Pages best practices.
 ## Phase 5: Optional hardening
 
 - [x] Add lightweight tests (render smoke test and one interaction test)
-- [ ] Add repository hygiene docs (`CONTRIBUTING`, `CODEOWNERS`) if needed
+- [x] Add repository hygiene docs (`CONTRIBUTING`, `CODEOWNERS`) if needed
