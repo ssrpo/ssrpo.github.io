@@ -1,15 +1,28 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { getPublicationGroups } from './content/siteContent'
 import { SectionContent } from './components/SectionContent'
 import { Sidebar } from './components/Sidebar'
+import { sectionLabels } from './types/content'
 import type { SectionId } from './types/content'
 import './App.css'
 
 function App() {
   const baseUrl = import.meta.env.BASE_URL
   const [activeSection, setActiveSection] = useState<SectionId>('about')
+  const sectionHeadingRef = useRef<HTMLHeadingElement | null>(null)
+  const isFirstRender = useRef(true)
+  const liveAnnouncement = `Showing ${sectionLabels[activeSection]} section`
 
   useEffect(() => {
+    if (typeof window.matchMedia !== 'function') {
+      return
+    }
+
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (reducedMotionQuery.matches) {
+      return
+    }
+
     let frameId = 0
 
     const handleMove = (event: MouseEvent) => {
@@ -37,6 +50,15 @@ function App() {
     }
   }, [])
 
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
+
+    sectionHeadingRef.current?.focus()
+  }, [activeSection])
+
   const publicationGroups = getPublicationGroups(baseUrl)
 
   return (
@@ -52,10 +74,14 @@ function App() {
         />
 
         <main id="content" className="right-panel" aria-label="Content">
+          <p className="sr-only" aria-live="polite">
+            {liveAnnouncement}
+          </p>
           <SectionContent
             activeSection={activeSection}
             baseUrl={baseUrl}
             publicationGroups={publicationGroups}
+            sectionHeadingRef={sectionHeadingRef}
           />
         </main>
       </div>

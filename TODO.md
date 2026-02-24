@@ -30,3 +30,10 @@ This checklist tracks code quality, structure, and GitHub Pages best practices.
 
 - [x] Add lightweight tests (render smoke test and one interaction test)
 - [x] Add repository hygiene docs (`CONTRIBUTING`, `CODEOWNERS`) if needed
+
+## Phase 6: Accessibility and quality automation
+
+- [x] Improve section-switch accessibility behavior (focus + announcements)
+- [x] Add meaningful alt text for informative imagery
+- [ ] Add automated accessibility checks (`jest-axe` + lint a11y rules)
+- [ ] Add Lighthouse CI checks with threshold assertions

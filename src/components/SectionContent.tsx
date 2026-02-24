@@ -1,21 +1,26 @@
+import type { RefObject } from 'react'
 import type { PublicationGroup, SectionId } from '../types/content'
 
 type SectionContentProps = {
   activeSection: SectionId
   baseUrl: string
   publicationGroups: PublicationGroup[]
+  sectionHeadingRef: RefObject<HTMLHeadingElement | null>
 }
 
 export function SectionContent({
   activeSection,
   baseUrl,
   publicationGroups,
+  sectionHeadingRef,
 }: SectionContentProps) {
   return (
     <>
       {activeSection === 'about' && (
-        <section className="section" id="about">
-          <h2>About</h2>
+        <section className="section" id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading" ref={sectionHeadingRef} tabIndex={-1}>
+            About
+          </h2>
           <p>
             I design assistive robotic systems with a human-first mindset,
             working at the intersection of robotics, software and mindful
@@ -58,8 +63,10 @@ export function SectionContent({
       )}
 
       {activeSection === 'in-between' && (
-        <section className="section" id="in-between">
-          <h2>In the In-Between</h2>
+        <section className="section" id="in-between" aria-labelledby="in-between-heading">
+          <h2 id="in-between-heading" ref={sectionHeadingRef} tabIndex={-1}>
+            In the In-Between
+          </h2>
           <p>
             I’ve tried to define my role many times. Engineer, Researcher,
             Designer, Product person — each label captures a part of what I
@@ -90,8 +97,10 @@ export function SectionContent({
       )}
 
       {activeSection === 'current' && (
-        <section className="section" id="current-work">
-          <h2>Current role — Robotics Research Engineer</h2>
+        <section className="section" id="current-work" aria-labelledby="current-work-heading">
+          <h2 id="current-work-heading" ref={sectionHeadingRef} tabIndex={-1}>
+            Current role — Robotics Research Engineer
+          </h2>
           <p>
             ISIR · Sorbonne University, Paris
           </p>
@@ -177,8 +186,10 @@ export function SectionContent({
       )}
 
       {activeSection === 'publications' && (
-        <section className="section" id="publications">
-          <h2>Publications & Videos</h2>
+        <section className="section" id="publications" aria-labelledby="publications-heading">
+          <h2 id="publications-heading" ref={sectionHeadingRef} tabIndex={-1}>
+            Publications & Videos
+          </h2>
           <div className="section-intro">
             <p>
               I write and share work at the intersection of robotics,
@@ -236,8 +247,10 @@ export function SectionContent({
       )}
 
       {activeSection === 'social-robotics' && (
-        <section className="section" id="social-robotics">
-          <h2>Social & Interactive Robotics</h2>
+        <section className="section" id="social-robotics" aria-labelledby="social-robotics-heading">
+          <h2 id="social-robotics-heading" ref={sectionHeadingRef} tabIndex={-1}>
+            Social & Interactive Robotics
+          </h2>
           <p className="interest-description">
             I work with iconic social robots designed to interact with people
             in rich, expressive ways. These experiences teach me about physical
@@ -261,8 +274,12 @@ export function SectionContent({
               expressive interaction. Working with NAO taught me how movement,
               speech and perception shape human-machine engagement.
             </p>
-            <div className="robot-image" aria-hidden="true">
-              <img src={`${baseUrl}nao.jpg`} alt="" loading="lazy" />
+            <div className="robot-image">
+              <img
+                src={`${baseUrl}nao.jpg`}
+                alt="NAO humanoid robot used for research and education"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -324,8 +341,12 @@ export function SectionContent({
               becomes a creative, relational experience rather than a purely
               functional one.
             </p>
-            <div className="robot-image" aria-hidden="true">
-              <img src={`${baseUrl}pepper.jpg`} alt="" loading="lazy" />
+            <div className="robot-image">
+              <img
+                src={`${baseUrl}pepper.jpg`}
+                alt="Pepper social robot standing in an indoor environment"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -343,16 +364,22 @@ export function SectionContent({
               developing interactions with Miroki robots, exploring playful and
               meaningful human-robot engagement.
             </p>
-            <div className="robot-image" aria-hidden="true">
-              <img src={`${baseUrl}mirokajpg`} alt="" loading="lazy" />
+            <div className="robot-image">
+              <img
+                src={`${baseUrl}mirokajpg`}
+                alt="Mirokaï assistive companion robot concept"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
       )}
 
       {activeSection === 'interests' && (
-        <section className="section" id="interests">
-          <h2>Interests</h2>
+        <section className="section" id="interests" aria-labelledby="interests-heading">
+          <h2 id="interests-heading" ref={sectionHeadingRef} tabIndex={-1}>
+            Interests
+          </h2>
           <div className="interest-intro">
             <p>
               I believe most problems are design problems. They live in
@@ -419,8 +446,12 @@ export function SectionContent({
               patience and attention — a personal practice of mindfulness and
               perception.
             </p>
-            <div className="photo-grid" aria-hidden="true">
-              <img src={`${baseUrl}insta.png`} alt="" loading="lazy" />
+            <div className="photo-grid">
+              <img
+                src={`${baseUrl}insta.png`}
+                alt="Photography collage from the mindful.lente Instagram project"
+                loading="lazy"
+              />
             </div>
           </div>
 

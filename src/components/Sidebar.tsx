@@ -1,4 +1,5 @@
 import { socialLinks } from '../content/siteContent'
+import { sectionPanelIds } from '../types/content'
 import type { SectionId } from '../types/content'
 
 type SidebarProps = {
@@ -26,6 +27,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
             className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
             onClick={() => setActiveSection('about')}
             aria-current={activeSection === 'about' ? 'true' : undefined}
+            aria-controls={sectionPanelIds.about}
           >
             About
           </button>
@@ -37,6 +39,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
               }`}
               onClick={() => setActiveSection('in-between')}
               aria-current={activeSection === 'in-between' ? 'true' : undefined}
+              aria-controls={sectionPanelIds['in-between']}
             >
               In the In-Between
             </button>
@@ -46,6 +49,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
             className={`nav-link ${activeSection === 'current' ? 'active' : ''}`}
             onClick={() => setActiveSection('current')}
             aria-current={activeSection === 'current' ? 'true' : undefined}
+            aria-controls={sectionPanelIds.current}
           >
             Current role
           </button>
@@ -54,6 +58,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
             className={`nav-link ${activeSection === 'social-robotics' ? 'active' : ''}`}
             onClick={() => setActiveSection('social-robotics')}
             aria-current={activeSection === 'social-robotics' ? 'true' : undefined}
+            aria-controls={sectionPanelIds['social-robotics']}
           >
             Social robotics
           </button>
@@ -62,6 +67,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
             className={`nav-link ${activeSection === 'interests' ? 'active' : ''}`}
             onClick={() => setActiveSection('interests')}
             aria-current={activeSection === 'interests' ? 'true' : undefined}
+            aria-controls={sectionPanelIds.interests}
           >
             Interests
           </button>
@@ -70,6 +76,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
             className={`nav-link ${activeSection === 'publications' ? 'active' : ''}`}
             onClick={() => setActiveSection('publications')}
             aria-current={activeSection === 'publications' ? 'true' : undefined}
+            aria-controls={sectionPanelIds.publications}
           >
             Publications
           </button>
