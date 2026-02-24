@@ -1,0 +1,32 @@
+# Website Improvement TODO
+
+This checklist tracks code quality, structure, and GitHub Pages best practices.
+
+## Phase 1: Deployment and GitHub standards
+
+- [ ] Move to root-site setup (`ssrpo.github.io` target) with `base: '/'`
+- [ ] Keep GitHub Pages deployment workflow aligned with root path
+- [ ] Add CI workflow for pull requests (`lint` + `build`) before deploy on `main`
+- [ ] Prepare custom domain handoff (`CNAME`) once DNS is ready
+
+## Phase 2: Performance and metadata
+
+- [ ] Replace heavy static assets (especially `public/phd.jpg`) with optimized formats
+- [ ] Improve HTML metadata (`title`, description, social preview, favicon)
+
+## Phase 3: Code structure and maintainability
+
+- [ ] Split `src/App.tsx` into smaller components
+- [ ] Move static content data into a dedicated module
+- [ ] Add explicit shared types for sections/content items
+
+## Phase 4: Cleanup and dead-code removal
+
+- [ ] Remove unused `home` state path and unreachable UI branches
+- [ ] Remove unused CSS selectors and keep stylesheet focused
+- [ ] Keep docs consistent with real code structure
+
+## Phase 5: Optional hardening
+
+- [ ] Add lightweight tests (render smoke test and one interaction test)
+- [ ] Add repository hygiene docs (`CONTRIBUTING`, `CODEOWNERS`) if needed
