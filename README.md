@@ -1,6 +1,14 @@
-# Susana Sanchez Restrepo - Personal Website
+# Hi, welcome to my personal website repo
 
-A single-page portfolio built with React, TypeScript, and Vite.
+I am Susana Sanchez Restrepo, and this repository contains the code for my personal website.
+
+I built this site to share my work in robotics, software, and human-centered design.
+
+## What is in this repo
+
+- A React + TypeScript + Vite single-page portfolio
+- My sections (About, Current Role, Social Robotics, Publications, Interests)
+- A GitHub Actions pipeline for quality checks and deployment
 
 ## Tech stack
 
@@ -8,44 +16,54 @@ A single-page portfolio built with React, TypeScript, and Vite.
 - TypeScript
 - Vite
 - ESLint
-- GitHub Actions (CI + Pages deploy)
+- Vitest + React Testing Library
 
 ## Project structure
 
-- `src/App.tsx`: app shell (state + layout wiring)
+- `src/App.tsx`: app shell and state wiring
 - `src/components/Sidebar.tsx`: left navigation and social links
-- `src/components/SectionContent.tsx`: section rendering
+- `src/components/SectionContent.tsx`: main section content rendering
 - `src/content/siteContent.tsx`: static content/data
-- `src/types/content.ts`: shared content types
+- `src/types/content.ts`: shared types
 - `src/App.css` and `src/index.css`: styles
 
-## Local development
+## Run locally
 
-1. Install dependencies: `npm install`
-2. Start dev server: `npm run dev`
-3. Lint: `npm run lint`
-4. Build: `npm run build`
-5. Preview production build: `npm run preview`
+1. Install dependencies
+   - `npm install`
+2. Start dev server
+   - `npm run dev`
+3. Run quality checks
+   - `npm run lint`
+   - `npm run test`
+   - `npm run build`
 
 ## CI and deployment
 
-- Pull requests run quality checks in `.github/workflows/ci.yml`.
-- Pushes to `main` run Pages deployment in `.github/workflows/deploy.yml`.
+- Pull requests run checks from `.github/workflows/ci.yml`.
+- Pushes to `main` deploy the site with `.github/workflows/deploy.yml`.
 
-## GitHub Pages (root setup)
+## Root URL setup (GitHub Pages)
 
-This project is configured for root hosting with `base: '/'`.
+This project uses `base: '/'`, so it is ready for root hosting.
 
 To publish at `https://ssrpo.github.io/`:
 
-1. Use a repository named `ssrpo.github.io`.
-2. In repository settings, enable Pages with source `GitHub Actions`.
+1. Use a repository named exactly `ssrpo.github.io`.
+2. In repository settings, enable GitHub Pages with source `GitHub Actions`.
 3. Push to `main`.
 
-## Custom domain (later)
+## Custom domain (planned)
 
-When DNS is ready for `suziesr.xyz`:
+I plan to use `suziesr.xyz`.
+
+Once DNS is ready:
 
 1. Add `suziesr.xyz` in GitHub Pages settings.
-2. Add a `public/CNAME` file containing exactly `suziesr.xyz`.
-3. Configure DNS records at your provider to point to GitHub Pages.
+2. Add `public/CNAME` with exactly:
+   - `suziesr.xyz`
+3. Configure DNS records at the domain provider to point to GitHub Pages.
+
+## Contributing
+
+If you want to contribute, please check `CONTRIBUTING.md`.
