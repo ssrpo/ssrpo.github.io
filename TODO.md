@@ -17,8 +17,8 @@ This checklist tracks code quality, structure, and GitHub Pages best practices.
 ## Phase 3: Code structure and maintainability
 
 - [ ] Split `src/App.tsx` into smaller components
-- [ ] Move static content data into a dedicated module
-- [ ] Add explicit shared types for sections/content items
+- [x] Move static content data into a dedicated module
+- [x] Add explicit shared types for sections/content items
 
 ## Phase 4: Cleanup and dead-code removal
 
