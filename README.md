@@ -2,12 +2,12 @@
 
 I am Susana Sanchez Restrepo, and this repository contains the code for my personal website.
 
-I built this site to share my work in robotics, software, and human-centered design.
+I built this site to share my work in robotics, software, human-centered design, and the broader ecosystem around my projects.
 
 ## What is in this repo
 
 - A React + TypeScript + Vite single-page portfolio
-- My sections (About, Current Role, Social Robotics, Publications, Interests)
+- A content-driven personal website with sections for profile, recommendations, robotics work, engagements, publications, and interests
 - A GitHub Actions pipeline for quality checks and deployment
 
 ## Tech stack
@@ -28,6 +28,19 @@ I built this site to share my work in robotics, software, and human-centered des
 - `src/types/content.ts`: shared types
 - `src/App.css` and `src/index.css`: styles
 
+## Current site structure
+
+- `What I do`: high-level profile and scope of work
+- `What They Say`: selected collaborator recommendations
+- `Current role`: current work in assistive robotics at ISIR / Sorbonne Universite
+- `Industrial robotics`: industry-focused robotics experience
+- `Assistive robotics`: PhD and current assistive robotics vision
+- `Social robotics`: humanoid and interaction-focused robotics work
+- `Engagements`: France 2030, ROSCon France, and association work
+- `Le cercle des robots disparus`: dedicated association project section
+- `Publications`: thesis, writing, talks, and videos
+- `Interests`: creative and personal threads connected to the work
+
 ## Run locally
 
 1. Install dependencies
@@ -44,17 +57,13 @@ I built this site to share my work in robotics, software, and human-centered des
 
 - Pull requests run checks from `.github/workflows/ci.yml`.
 - Pull requests also run Lighthouse checks from `.github/workflows/lighthouse.yml`.
-- Pushes to `main` deploy the site with `.github/workflows/deploy.yml`.
+- Pushes to `main` deploy the site to GitHub Pages with `.github/workflows/deploy.yml`.
 
 ## Accessibility
 
 - Section switches announce changes and move focus to section headings.
 - Automated accessibility checks run in tests using `jest-axe`.
 - ESLint enforces JSX accessibility rules.
-
-## Root URL setup (GitHub Pages)
-
-This project uses `base: '/'`, so it is ready for root hosting.
 
 ## Contributing
 
