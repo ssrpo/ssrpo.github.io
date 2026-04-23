@@ -94,11 +94,11 @@ export const getPublicationGroups = (baseUrl: string): PublicationGroup[] => [
         title: 'YouTube channel',
         meta: 'Video · YouTube',
         label: 'Channel',
-        image: 'https://i.ytimg.com/vi/0AzRyneaVMY/hqdefault.jpg',
+        image: 'https://i.ytimg.com/vi/TJucS00rqnA/hqdefault.jpg',
         href: 'https://youtube.com/@SusanaSanchezRestrepo',
       },
       {
-        title: 'Robotics webinar (YouTube)',
+        title: "Prix La Fabrique de l'industrie",
         meta: 'Video · YouTube',
         label: 'Webinar',
         image: 'https://i.ytimg.com/vi/0AzRyneaVMY/hqdefault.jpg',

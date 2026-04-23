@@ -7,10 +7,10 @@ import App from './App'
 expect.extend(toHaveNoViolations)
 
 describe('App', () => {
-  it('renders About as the default section', () => {
+  it('renders What I do as the default section', () => {
     render(<App />)
 
-    expect(screen.getByRole('heading', { name: 'About' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'What I do' })).toBeInTheDocument()
   })
 
   it('switches section when a nav button is clicked', async () => {

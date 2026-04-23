@@ -2,16 +2,26 @@ import type { ReactNode } from 'react'
 
 export type SectionId =
   | 'about'
+  | 'recommendations'
   | 'in-between'
   | 'current'
+  | 'industrial-robotics'
+  | 'assistive-robotics'
+  | 'ecosystem'
+  | 'cercle'
   | 'publications'
   | 'social-robotics'
   | 'interests'
 
 export const sectionLabels: Record<SectionId, string> = {
-  about: 'About',
+  about: 'What I do',
+  recommendations: 'What They Say',
   'in-between': 'In the In-Between',
   current: 'Current role',
+  'industrial-robotics': 'Industrial robotics',
+  'assistive-robotics': 'Assistive robotics',
+  ecosystem: 'Engagements',
+  cercle: 'Le cercle des robots disparus',
   publications: 'Publications',
   'social-robotics': 'Social robotics',
   interests: 'Interests',
@@ -19,8 +29,13 @@ export const sectionLabels: Record<SectionId, string> = {
 
 export const sectionPanelIds: Record<SectionId, string> = {
   about: 'about',
+  recommendations: 'recommendations',
   'in-between': 'in-between',
   current: 'current-work',
+  'industrial-robotics': 'industrial-robotics',
+  'assistive-robotics': 'assistive-robotics',
+  ecosystem: 'ecosystem',
+  cercle: 'cercle',
   publications: 'publications',
   'social-robotics': 'social-robotics',
   interests: 'interests',
