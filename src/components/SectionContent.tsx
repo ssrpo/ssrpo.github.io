@@ -22,42 +22,35 @@ export function SectionContent({
             About
           </h2>
           <p>
-            I design assistive robotic systems with a human-first mindset,
-            working at the intersection of robotics, software and mindful
-            crafting.
+            I design robotic systems for real-world use, with a profile that
+            combines robotics engineering, software architecture and
+            multidisciplinary coordination.
           </p>
           <p>
-            My current work focuses on the control of robotic manipulators
-            for assistive applications, particularly within the Extender
-            project. The goal is simple to state and complex to achieve:
-            enabling people who rely on wheelchairs to perform everyday
-            tasks using a robotic arm that feels intuitive, safe and
-            supportive in real life.
+            My background spans research, industry and product environments. I
+            have worked on assistive robotic manipulators, industrial robot
+            software, mobile logistics robots and social robots, with a common
+            thread: making complex systems robust, understandable and deployable.
           </p>
           <p>
-            This work requires more than writing control laws or building
-            software architectures. It means staying close to users,
-            clinicians and real-world contexts and letting those
-            interactions shape technical decisions. I spend my time moving
-            between real-time control in C++, modular robotic software
-            architectures, experimentation tools and continuous dialogue
-            with the people these systems are meant to support.
+            I work comfortably across command and control, distributed software,
+            experimentation, product framing and project steering. That includes
+            real-time robotics development in C++, ROS 2 and Python, but also
+            translating constraints between engineers, researchers, users,
+            clinicians, partners and clients.
           </p>
           <p>
-            My background spans robotics, software engineering, human–
-            machine interaction and product thinking. I care deeply about
-            systems that are robust and scalable, but also about clarity,
-            embodiment and trust. For me, a successful system is not only
-            one that works, but one that fits naturally into human routines
-            without demanding constant attention.
+            I care about systems that are technically rigorous and also usable
+            in practice. For me, a good robotic system is not only a good demo
+            or a good paper. It is a system that can be tested, maintained,
+            trusted and integrated into a real environment.
           </p>
           <p>
-            I enjoy working in this in-between space — where engineering
-            meets lived experience, where constraints meet creativity and
-            where machines stop being impressive objects and start becoming
-            quiet companions. This balance between technical rigor and
-            human presence
-            is what keeps my work grounded and meaningful.
+            Alongside this technical work, I also contribute as an expert
+            reviewer in robotics and AI for France 2030 and as a coordinator
+            for ROSCon France. These roles reflect a part of my profile I value
+            deeply: connecting technical depth with ecosystem, strategy and
+            collective progress.
           </p>
         </section>
       )}
@@ -109,16 +102,21 @@ export function SectionContent({
             assistive robotic manipulators at ISIR (Sorbonne University),
             within the{' '}
             <a
-              href="https://orthopus.com/fr/explorer/"
+              href="https://orthopus.com/explorer/"
               target="_blank"
               rel="noreferrer"
             >
               Extender
             </a>{' '}
-            project.
-            The project aims to enable wheelchair users to perform everyday
+            project. The goal is to enable wheelchair users to perform everyday
             tasks using an assistive robotic arm deployed in real-world
             contexts.
+          </p>
+          <p>
+            This work sits at the intersection of robotic control, software
+            modularity, user studies and clinical realities. It requires both
+            technical depth and close coordination between laboratory,
+            industrial and care-oriented stakeholders.
           </p>
 
           <h3>Technical activities</h3>
@@ -133,6 +131,9 @@ export function SectionContent({
             <li>
               Web interfaces for teleoperation and experiments (FastAPI and React)
             </li>
+            <li>
+              Shared software foundations deployed across several robot platforms
+            </li>
           </ul>
 
           <h3>Research activities</h3>
@@ -145,6 +146,9 @@ export function SectionContent({
             </li>
             <li>
               Scientific writing and paper submissions (ICRA)
+            </li>
+            <li>
+              Experimental design shaped by user, clinical and ecological constraints
             </li>
           </ul>
 
@@ -164,6 +168,9 @@ export function SectionContent({
             <li>
               Co-design sessions and experimental studies with users
             </li>
+            <li>
+              Coordination across researchers, engineers, clinicians and industrial partners
+            </li>
           </ul>
 
           <h3>Engagement & community</h3>
@@ -180,6 +187,9 @@ export function SectionContent({
             </li>
             <li>
               Participation in user-centered workshops and co-design events
+            </li>
+            <li>
+              Coordinator for ROSCon France and expert reviewer in robotics and AI for France 2030
             </li>
           </ul>
         </section>
@@ -252,15 +262,15 @@ export function SectionContent({
             Social & Interactive Robotics
           </h2>
           <p className="interest-description">
-            I work with iconic social robots designed to interact with people
-            in rich, expressive ways. These experiences teach me about physical
-            presence, social context and human–robot rapport — lessons that
-            continue to influence how I think about embodied interaction today.
+            I have worked with iconic social robots designed to interact with
+            people in expressive and situated ways. These experiences shaped how
+            I think about physical presence, context, trust and human–robot
+            rapport, and they continue to inform my current work.
           </p>
           <div className="robot-entry">
             <h3 className="interest-title">
               <a
-                href="https://en.wikipedia.org/wiki/Nao_(robot)"
+                href="https://aldebaran.com/en/"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -286,60 +296,39 @@ export function SectionContent({
           <div className="robot-entry">
             <h3 className="interest-title">
               <a
-                href="https://en.wikipedia.org/wiki/Pepper_(robot)"
+                href="https://us.softbankrobotics.com/pepper"
                 target="_blank"
                 rel="noreferrer"
               >
-                Pepper robot (Aldebaran)
+                Pepper robot (SoftBank Robotics)
               </a>
             </h3>
             <div className="robot-meta">Social interaction robot</div>
             <p className="robot-description">
-              Pepper is a semi-humanoid robot designed to recognize basic human
-              emotions and engage people in everyday contexts. It was widely
-              showcased in retail, public spaces and research experiments
-              exploring social presence and robot-mediated interaction.
+              At SoftBank Robotics Europe, my work focused on perception,
+              interaction and expressivity for the Pepper robot, with the goal
+              of creating richer and more contextual interactions.
             </p>
             <h4 className="interest-subtitle">
               Enhancing expressivity and human–robot interaction
             </h4>
             <p className="robot-description">
-              At Aldebaran Robotics, my work focused on enhancing the expressivity
-              and human–robot interaction experience of the Pepper robot.
-            </p>
-            <p className="robot-description">
-              On the technical side, I contributed to improving the robot’s
-              environment awareness and perception capabilities, enabling more
-              contextual and responsive interactions. I also worked on expressive
-              interaction through voice, combining research in emotion theories,
-              affective computing and natural language processing for robotics.
-            </p>
-            <p className="robot-description">
-              This included the development of expressive text-to-speech systems,
-              exploring contextual prosody modification, style transfer and
-              emotion conveyed through voice using machine learning and deep
-              learning approaches. These explorations were driven by the idea
-              that voice is a powerful carrier of intention, emotion and social
-              presence.
+              I contributed to environment awareness, perception and expressive
+              voice interaction, combining robotics engineering with affective
+              computing, natural language processing and human–robot interaction
+              research.
             </p>
             <ul className="robot-sublist">
               <li>Environment awareness and perception strategies for social interaction</li>
               <li>Research in affective computing, emotion theories and NLP for robotics</li>
               <li>Expressive TTS systems using machine learning and deep learning</li>
               <li>Contextual prosody modulation and emotion-aware voice synthesis</li>
-              <li>Collaboration with PhD researchers on persuasion in HRI (H2020 ANIMATAS project)</li>
+              <li>Collaboration with PhD researchers in the H2020 ANIMATAS project</li>
             </ul>
             <p className="robot-description">
-              Beyond development and research, I supervised master’s students and
-              collaborated closely with PhD students within the European H2020
-              ANIMATAS project, exploring persuasion and social influence in
-              human–robot interaction.
-            </p>
-            <p className="robot-description">
-              This work sits at the crossroads of technology, psychology and
-              design — where robots become expressive artifacts and interaction
-              becomes a creative, relational experience rather than a purely
-              functional one.
+              I also supervised master’s students and collaborated with PhD
+              researchers, in a setting where technology, psychology and design
+              met very directly.
             </p>
             <div className="robot-image">
               <img
@@ -359,10 +348,10 @@ export function SectionContent({
             <div className="robot-meta">Assistive companion robot</div>
             <p className="robot-description">
               The Mirokaï robots, developed by Enchanted Tools, blend utility
-              with wonder to assist, engage and inspire in healthcare and social
-              environments. At Sorbonne University I’m also involved in
-              developing interactions with Miroki robots, exploring playful and
-              meaningful human-robot engagement.
+              with wonder in healthcare and social environments. At Sorbonne
+              University I am also involved in interaction-related work around
+              these robots, exploring playful and meaningful human-robot
+              engagement.
             </p>
             <div className="robot-image">
               <img
