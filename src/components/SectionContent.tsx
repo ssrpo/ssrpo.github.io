@@ -251,7 +251,7 @@ export function SectionContent({
             industrial and care-oriented stakeholders.
           </p>
           <p>
-            A significant part of my role consists in clarifying needs,
+            A significant part of my role consists of clarifying needs,
             structuring specifications, contributing to roadmap decisions,
             aligning stakeholders and making sure the software remains coherent
             across technical, clinical and user constraints.
