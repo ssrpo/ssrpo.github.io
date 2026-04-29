@@ -1,4 +1,7 @@
 import type { RefObject } from 'react'
+import explorerImage from '../assets/explorer.png'
+import explorerManImage from '../assets/explorer_man.png'
+import profileImage from '../assets/ssr_profile_isir.webp'
 import type { PublicationGroup, SectionId } from '../types/content'
 
 type SectionContentProps = {
@@ -23,35 +26,45 @@ export function SectionContent({
           <h2 id="about-heading" ref={sectionHeadingRef} tabIndex={-1}>
             What I do
           </h2>
-          <p>
-            I design robotic systems for real-world use, combining robotics
-            engineering, software architecture and multidisciplinary
-            coordination.
-          </p>
-          <p>
-            My background spans research, industry and product environments,
-            from assistive robotics to industrial and social robotics, with a
-            constant focus on systems that are robust, understandable and
-            deployable.
-          </p>
-          <p>
-            I work across control, distributed software, experimentation,
-            product framing and project steering, with a strong interest in the
-            human realities that shape how technical systems are actually used.
-          </p>
+          <div className="about-flow">
+            <figure className="profile-portrait">
+              <img
+                src={profileImage}
+                alt="Portrait of Susana Sanchez Restrepo"
+                loading="lazy"
+              />
+            </figure>
+            <p>
+              I design complex interactive systems for real-world use, combining
+              robotics engineering, software architecture, product thinking and
+              multidisciplinary coordination.
+            </p>
+            <p>
+              My background spans research, industry and product environments,
+              from industrial robotics and interactive machines to assistive
+              robotics and medical devices, with a constant focus on systems that
+              are robust, understandable and deployable.
+            </p>
+            <p>
+              I work across control, distributed software, interfaces,
+              experimentation, product framing and project steering. I am most at
+              home where technical complexity meets real users, operational
+              constraints and the need to make good decisions collectively.
+            </p>
+          </div>
           <p>
             Concretely, this includes real-time control laws, robot-agnostic
             software architectures, teleoperation and supervision interfaces,
-            perception and interaction modules, and the validation of systems
-            on real robotic platforms rather than only in isolated prototypes.
+            product specifications, roadmap contributions, and validation on
+            real platforms rather than only in isolated prototypes.
           </p>
           <p>
             I have worked on collaborative robots in factories, mobile
             logistics robots, humanoid and social robots, and assistive
             manipulators for people with disabilities. Across these different
-            contexts, I keep returning to the same question: how can robotics
-            become both technically strong and genuinely useful in the lives of
-            the people who interact with it?
+            contexts, I keep returning to the same question: how can complex
+            systems become both technically strong and genuinely useful for the
+            people who interact with them?
           </p>
           <p>
             My work also often sits at the interface between disciplines. I am
@@ -63,10 +76,10 @@ export function SectionContent({
           <p>
             Alongside project work, I contribute through expert review,
             community coordination and association projects, from France 2030
-            and ROSCon France to user-centered and cultural initiatives around
-            robotics. Together, these activities reflect the broader vision
-            behind my work: robotics as an engineering discipline, but also as
-            a human, social and collective practice.
+            and ROSCon France to user-centered and cultural initiatives.
+            Together, these activities reflect the broader vision
+            behind my work: complex systems as technical objects, but also as
+            human, social and collective realities.
           </p>
         </section>
       )}
@@ -121,6 +134,59 @@ export function SectionContent({
         </section>
       )}
 
+      {activeSection === 'user-centered' && (
+        <section className="section" id="user-centered" aria-labelledby="user-centered-heading">
+          <h2 id="user-centered-heading" ref={sectionHeadingRef} tabIndex={-1}>
+            User-Centered Development
+          </h2>
+          <p>
+            One constant across my work is the importance of the user. Whether
+            I am building robotics systems, operator tools or software products,
+            I do not see development as only a technical exercise. I see it as
+            a process of understanding real situations, real constraints and the
+            people who will live with the result.
+          </p>
+          <p>
+            That perspective was already central in my Ph.D., where I worked on
+            collaborative robots designed to assist people in factories through
+            comanipulation and skill teaching by demonstration. The goal was not
+            only to make the robot perform well, but to make collaboration more
+            intuitive, comfortable and meaningful for the person working with
+            it.
+          </p>
+          <p>
+            Today, this approach continues in assistive robotics through the
+            Extender project, where technical choices are constantly shaped by
+            user workshops, clinical realities and the question of how a robotic
+            arm can support daily autonomy without taking agency away from the
+            person using it.
+          </p>
+          <p>
+            It has also shaped my software and product work. Through Banana Army
+            and Rumble Studio, I spent a lot of time doing UX review, UX
+            research, product framing, specification work and interface
+            thinking. I worked on translating needs into concrete features,
+            questioning assumptions, clarifying use cases and making sure the
+            product experience stayed coherent from the user side as well as the
+            technical side.
+          </p>
+          <p>
+            This interest is also something I have cultivated more explicitly,
+            including through a Google course on UX foundations. For me, UX is
+            not separate from engineering. It is part of building better
+            systems: systems that people can understand, trust and actually
+            adopt.
+          </p>
+          <h3>How this appears in my work</h3>
+          <ul className="focus-list">
+            <li>User workshops, co-design sessions and field constraints integrated into technical decisions</li>
+            <li>Product framing, use-case definition and specification work for software and robotics projects</li>
+            <li>UX review and interface thinking for HMI, teleoperation and web-based tools</li>
+            <li>Long-term focus on systems that support human agency rather than forcing rigid usage patterns</li>
+          </ul>
+        </section>
+      )}
+
       {showInBetween && activeSection === 'in-between' && (
         <section className="section" id="in-between" aria-labelledby="in-between-heading">
           <h2 id="in-between-heading" ref={sectionHeadingRef} tabIndex={-1}>
@@ -158,7 +224,7 @@ export function SectionContent({
       {activeSection === 'current' && (
         <section className="section" id="current-work" aria-labelledby="current-work-heading">
           <h2 id="current-work-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            Current role — Robotics Research Engineer
+            Current Role — Robotics Research Engineer
           </h2>
           <p>
             ISIR · Sorbonne University, Paris
@@ -175,8 +241,8 @@ export function SectionContent({
               Extender
             </a>{' '}
             project. The goal is to enable wheelchair users to perform everyday
-            tasks using an assistive robotic arm deployed in real-world
-            contexts.
+            tasks using an assistive robotic arm developed in a medical-device
+            context and deployed in real-world conditions.
           </p>
           <p>
             This work sits at the intersection of robotic control, software
@@ -184,8 +250,14 @@ export function SectionContent({
             technical depth and close coordination between laboratory,
             industrial and care-oriented stakeholders.
           </p>
+          <p>
+            A significant part of my role consists in clarifying needs,
+            structuring specifications, contributing to roadmap decisions,
+            aligning stakeholders and making sure the software remains coherent
+            across technical, clinical and user constraints.
+          </p>
 
-          <h3>Technical activities</h3>
+          <h3>Technical Activities</h3>
           <ul className="focus-list">
             <li>
               Real-time control laws for assistive manipulators (C++ and ROS 2)
@@ -202,7 +274,7 @@ export function SectionContent({
             </li>
           </ul>
 
-          <h3>Research activities</h3>
+          <h3>Research Activities</h3>
           <ul className="focus-list">
             <li>
               Research in shared control and assistive robotics
@@ -218,18 +290,17 @@ export function SectionContent({
             </li>
           </ul>
 
-          <h3>Product & interdisciplinary coordination</h3>
+          <h3>Product & Interdisciplinary Coordination</h3>
           <ul className="focus-list">
             <li>
               Translating user and clinical needs into technical decisions
             </li>
             <li>
-              Reference documentation linking user, clinical and technical
-              constraints
+              Technical and functional structuring: specifications, roadmap and feature coherence
             </li>
             <li>
-              Contribution to project roadmap across user, clinical and technical
-              levels
+              Contribution to project roadmap and documentation across user,
+              clinical and technical levels
             </li>
             <li>
               Co-design sessions and experimental studies with users
@@ -239,37 +310,21 @@ export function SectionContent({
             </li>
           </ul>
 
-          <h3>Engagement & community</h3>
+          <h3>Medical-Device Perspective</h3>
           <ul className="focus-list">
-            <li>
-              Member of the{' '}
-              <a
-                href="https://www.helloasso.com/associations/paris-cybathletique-club"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Paris Cyberathletic Club
-              </a>
-            </li>
-            <li>
-              Participation in user-centered workshops and co-design events
-            </li>
-            <li>
-              Coordinator for ROSCon France and expert reviewer in robotics and AI for France 2030
-            </li>
+            <li>Attention to clinical context, patient safety and real-world usability</li>
+            <li>Interfaces and tools designed for coherent usage across experimentation and deployment</li>
+            <li>Product thinking applied to complex technical systems rather than isolated features</li>
+            <li>Continuous feedback loops between technical development, users and field constraints</li>
           </ul>
+
         </section>
       )}
 
       {activeSection === 'industrial-robotics' && (
         <section className="section" id="industrial-robotics" aria-labelledby="industrial-robotics-heading">
           <h2 id="industrial-robotics-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            <span className="section-heading-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M8 5h4v4H8zM12 7h4l2 2v3l-3 2-2 5h-2l1-5-2-2V9z" />
-              </svg>
-            </span>
-            Industrial robotics
+            Industrial Robotics
           </h2>
           <p>
             A significant part of my experience is rooted in industrial
@@ -335,17 +390,13 @@ export function SectionContent({
       {activeSection === 'assistive-robotics' && (
         <section className="section" id="assistive-robotics" aria-labelledby="assistive-robotics-heading">
           <h2 id="assistive-robotics-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            <span className="section-heading-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 4a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm-2 6h4l2 3v7h-2v-5h-1l-1 5h-2l1-5H9v5H7v-7l3-3Z" />
-              </svg>
-            </span>
-            Assistive robotics
+            Assistive & Medical Devices
           </h2>
           <p>
-            Assistive robotics has been a long-running thread in my work, from
-            my Ph.D. on human-robot comanipulation in industrial settings to my
-            current work on robotic assistance for people with disabilities.
+            Assistive robotics and medical devices have been a long-running
+            thread in my work, from my Ph.D. on human-robot comanipulation in
+            industrial settings to my current work on robotic assistance for
+            people with disabilities in a medical-device context.
           </p>
           <p>
             My doctoral research focused on helping people work with
@@ -379,13 +430,42 @@ export function SectionContent({
             building robotic systems that adapt to people, learn from how they
             move and collaborate, and provide support without taking over.
           </p>
+          <p>
+            The software dimension of this work is also visible in the open{' '}
+            <a href="https://github.com/ISIR-EXTENDER" target="_blank" rel="noreferrer">
+              ISIR-EXTENDER
+            </a>{' '}
+            ecosystem: a modular ROS2 stack for teleoperation and control
+            research, with reusable robot interfaces, pluggable controllers and
+            operator tools built across C++, Python, FastAPI, React and
+            TypeScript.
+          </p>
+          <figure className="section-visual">
+            <div className="section-visual-pair">
+              <img
+                src={explorerImage}
+                alt="Explorer assistive robotic arm for daily autonomy"
+                loading="lazy"
+              />
+              <img
+                src={explorerManImage}
+                alt="Illustration of assistive robotics supporting autonomy from a wheelchair"
+                loading="lazy"
+              />
+            </div>
+            <figcaption>
+              Assistive robotics, for me, means designing devices that are
+              technically capable and genuinely compatible with everyday human
+              life.
+            </figcaption>
+          </figure>
 
-          <h3>What this work is about</h3>
+          <h3>Technical and Product Dimensions</h3>
           <ul className="focus-list">
-            <li>Human-robot comanipulation and collaborative assistance in real tasks</li>
-            <li>Teaching robot skills by demonstration rather than relying only on explicit programming</li>
-            <li>Designing assistive behaviors that improve comfort, intuitiveness and trust</li>
-            <li>Bridging industrial cobot research and today&apos;s assistive robotics for daily autonomy</li>
+            <li>Shared control and teleoperation strategies for assistive manipulators in real tasks</li>
+            <li>Robot-agnostic software architecture designed for reuse across platforms and experiments</li>
+            <li>Operator interfaces and feedback loops shaped by usability, safety and deployment constraints</li>
+            <li>Continuity between industrial comanipulation research and assistive systems for daily autonomy</li>
           </ul>
         </section>
       )}
@@ -454,19 +534,14 @@ export function SectionContent({
       {activeSection === 'social-robotics' && (
         <section className="section" id="social-robotics" aria-labelledby="social-robotics-heading">
           <h2 id="social-robotics-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            <span className="section-heading-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M6 8a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm12 0a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM12 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 8c3.5 0 6 1.6 6 4v2h-2v-2c0-1.1-1.7-2-4-2s-4 .9-4 2v2H6v-2c0-2.4 2.5-4 6-4Z" />
-              </svg>
-            </span>
-            Social & Interactive Robotics
+            Human-Robot Interaction
           </h2>
           <p className="interest-description">
-            Another important thread in my work is social and humanoid robotics,
-            where interaction quality, context awareness and embodiment matter
-            as much as technical performance. These experiences continue to
-            shape how I think about trust, expressivity and human-robot
-            relationships.
+            Human-robot interaction has been one of the places where I explored
+            perception, context-awareness, expressive behavior and embodied
+            interfaces most directly. In these projects, the challenge is not
+            only to make a robot function, but to make its behavior legible,
+            adaptive and meaningful for the people around it.
           </p>
           <div className="robot-entry">
             <h3 className="interest-title">SoftBank Robotics Europe</h3>
@@ -563,7 +638,7 @@ export function SectionContent({
           <p>
             I am also involved in{' '}
             <a href="https://lecercledesrobotsdisparus.org/" target="_blank" rel="noreferrer">
-              Le cercle des robots disparus
+              Le Cercle des Robots Disparus
             </a>
             , a new association project dedicated to the reuse of robots and
             scientific equipment for education, art and social impact.
@@ -582,11 +657,11 @@ export function SectionContent({
       {activeSection === 'cercle' && (
         <section className="section" id="cercle" aria-labelledby="cercle-heading">
           <h2 id="cercle-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            Le cercle des robots disparus
+            Le Cercle des Robots Disparus
           </h2>
           <p>
             <a href="https://lecercledesrobotsdisparus.org/" target="_blank" rel="noreferrer">
-              Le cercle des robots disparus
+              Le Cercle des Robots Disparus
             </a>{' '}
             is a new association project dedicated to the reuse of robots and
             scientific equipment for education, art and social impact.
@@ -599,17 +674,10 @@ export function SectionContent({
             inventories to stay meaningful.
           </p>
           <p>
-            For me, the association also extends a broader vision of robotics:
-            one that values transmission, cultural imagination and social
-            utility alongside engineering. It opens space for education,
-            artistic exploration and collective reuse, while keeping technical
-            objects alive in new contexts and new stories.
-          </p>
-          <p>
-            I also see it as a way of generating attention around another side
-            of robotics: memory, reuse and cultural life. Forgotten machines
-            can become educational, artistic and social entry points into
-            robotics again.
+            For me, the association extends a broader vision of robotics: one
+            that values transmission, cultural imagination and social utility
+            alongside engineering. Forgotten machines can become educational,
+            artistic and collective entry points into robotics again.
           </p>
 
           <h3>Why this matters to me</h3>
@@ -643,37 +711,35 @@ export function SectionContent({
           <div className="interest-block">
             <h3 className="interest-title">Robots and interactive machines</h3>
             <p className="interest-description">
-              Since I was a teenager, I have been drawn to building robots,
-              interactive objects and machines that do something in the world
-              rather than stay abstract. Long before every project was carefully
-              documented, I was already fascinated by the encounter between a
-              machine and the person facing it.
+              Since I was a teenager, I have been drawn to robots, interactive
+              objects and machines that act in the world. Not as technical
+              curiosities, but as presences: things that invite gesture,
+              attention, play, care or surprise.
             </p>
             <p className="interest-description">
-              What has stayed constant through the years is this conviction: the
-              most important thing about machines is not the machine itself, but
-              the human relationship it creates. This is why robots,
-              interactive art, embodied systems and unusual interfaces have
-              always felt close to my robotics work.
+              What has never changed is this conviction: the most important
+              thing about a machine is not the machine itself, but the human
+              relationship it makes possible. This is why robotics, interactive
+              art, embodied systems and unusual interfaces all belong to the
+              same landscape for me.
             </p>
             <p className="interest-description">
               I am especially drawn to projects where machines become occasions
-              for attention, curiosity and shared experience. A good trace of
-              that mindset is the Museomix project below, at the crossroads of
-              interactive installation, collective creation and human-centered
-              experimentation.
+              for curiosity, collective experience and new ways of sensing the
+              world. The Museomix project below is one trace of that early
+              impulse: building technical objects that are also cultural,
+              relational and alive.
             </p>
           </div>
 
           <div className="interest-block">
             <h3 className="interest-title">Interactive installation (Museomix 2013)</h3>
             <p className="interest-description">
-              An interactive installation exploring perception, presence and
-              embodied interaction. A hands-on way of thinking about how humans
-              relate to machines beyond interfaces. An early exploration of
-              collective creation, rapid prototyping and human-centered
-              experimentation in cultural spaces — a formative experience in
-              designing with constraints, people and real-world context.
+              Museomix was an early lesson in interdisciplinary making:
+              designers, technologists, makers and storytellers building
+              together under real constraints, in public, in a museum. What
+              stayed with me was not only the prototype, but the feeling that a
+              technical object can also become a shared cultural experience.
             </p>
             <div className="video-embed">
               <iframe
@@ -732,7 +798,7 @@ export function SectionContent({
             design software architectures, how I think about robotic behavior and
             how I navigate interdisciplinary collaboration. Observing carefully,
             designing with care and staying grounded in real interactions are as
-            important to me as writing code.
+            important to me as any technical decision I make.
           </p>
         </section>
       )}

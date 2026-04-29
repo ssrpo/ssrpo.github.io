@@ -17,10 +17,10 @@ describe('App', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole('button', { name: 'Current role' }))
+    await user.click(screen.getByRole('button', { name: 'Current Role' }))
 
     expect(
-      screen.getByRole('heading', { name: /Current role/i }),
+      screen.getByRole('heading', { name: /Current Role/i }),
     ).toBeInTheDocument()
   })
 
@@ -28,11 +28,17 @@ describe('App', () => {
     const user = userEvent.setup()
     render(<App />)
 
-    await user.click(screen.getByRole('button', { name: 'Social robotics' }))
+    await user.click(
+      screen.getByRole('button', {
+        name: /Human-Robot Interaction/i,
+      }),
+    )
 
-    const heading = screen.getByRole('heading', { name: /Social & Interactive Robotics/i })
+    const heading = screen.getByRole('heading', { name: /Human-Robot Interaction/i })
     expect(heading).toHaveFocus()
-    expect(screen.getByText('Showing Social robotics section')).toBeInTheDocument()
+    expect(
+      screen.getByText('Showing Human-Robot Interaction section'),
+    ).toBeInTheDocument()
   })
 
   it('has no detectable accessibility violations in key sections', async () => {
@@ -41,7 +47,10 @@ describe('App', () => {
 
     expect(await axe(container)).toHaveNoViolations()
 
-    await user.click(screen.getByRole('button', { name: 'Current role' }))
+    await user.click(screen.getByRole('button', { name: 'Current Role' }))
+    expect(await axe(container)).toHaveNoViolations()
+
+    await user.click(screen.getByRole('button', { name: 'Assistive & Medical Devices' }))
     expect(await axe(container)).toHaveNoViolations()
   })
 })

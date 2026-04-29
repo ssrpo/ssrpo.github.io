@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 export type SectionId =
   | 'about'
   | 'recommendations'
+  | 'user-centered'
   | 'in-between'
   | 'current'
   | 'industrial-robotics'
@@ -16,20 +17,22 @@ export type SectionId =
 export const sectionLabels: Record<SectionId, string> = {
   about: 'What I do',
   recommendations: 'What They Say',
+  'user-centered': 'User-Centered Development',
   'in-between': 'In the In-Between',
-  current: 'Current role',
-  'industrial-robotics': 'Industrial robotics',
-  'assistive-robotics': 'Assistive robotics',
+  current: 'Current Role',
+  'industrial-robotics': 'Industrial Robotics',
+  'assistive-robotics': 'Assistive & Medical Devices',
   ecosystem: 'Engagements',
-  cercle: 'Le cercle des robots disparus',
+  cercle: 'Le Cercle des Robots Disparus',
   publications: 'Publications',
-  'social-robotics': 'Social robotics',
+  'social-robotics': 'Human-Robot Interaction',
   interests: 'Interests',
 }
 
 export const sectionPanelIds: Record<SectionId, string> = {
   about: 'about',
   recommendations: 'recommendations',
+  'user-centered': 'user-centered',
   'in-between': 'in-between',
   current: 'current-work',
   'industrial-robotics': 'industrial-robotics',

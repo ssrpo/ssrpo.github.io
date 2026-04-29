@@ -1,3 +1,4 @@
+import guidanceImage from '../assets/guidance.jpg'
 import type { PublicationGroup, SocialLink } from '../types/content'
 
 export const socialLinks: SocialLink[] = [
@@ -50,6 +51,13 @@ export const getPublicationGroups = (baseUrl: string): PublicationGroup[] => [
         label: 'PDF',
         image: `${baseUrl}phd.webp`,
         href: 'https://theses.hal.science/tel-01785574',
+      },
+      {
+        title: 'Google Scholar profile',
+        meta: 'Academic profile · Google Scholar',
+        label: 'Profile',
+        image: guidanceImage,
+        href: 'https://scholar.google.fr/citations?user=YJdKzGAAAAAJ&hl=fr',
       },
     ],
   },

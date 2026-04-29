@@ -1,6 +1,14 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Source+Sans+3:wght@400;500;600&display=swap');
+
 :root {
-  font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  font-family:
+    'Source Sans 3',
+    'Atkinson Hyperlegible Next',
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
   line-height: 1.6;
   font-weight: 400;
   color-scheme: dark;
@@ -16,11 +24,11 @@
   --text-muted: #b8b8c2;
 
   /* Accents */
-  --accent-yellow: #ffd60a;
+  --accent-yellow: #e7c96a;
   --accent-fuchsia: #e23d8f;
 
   /* States */
-  --focus: #ffd60a;
+  --focus: #e7c96a;
   --danger: #ff5a5f;
   --success: #2ee59d;
 
@@ -51,6 +59,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   text-rendering: optimizeLegibility;
+  font-size: 1rem;
 }
 
 a {
@@ -75,7 +84,7 @@ textarea:focus-visible,
 }
 
 ::selection {
-  background: rgba(255, 214, 10, 0.35);
+  background: rgba(231, 201, 106, 0.35);
   color: var(--text);
 }
 

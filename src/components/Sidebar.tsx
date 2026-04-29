@@ -13,15 +13,15 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
   return (
     <aside className="left-panel" aria-label="Intro">
       <div className="hero-text">
-        <p className="eyebrow">Robotics · Software · Mindful crafting</p>
+        <p className="eyebrow">Interactive systems · Software · Mindful crafting</p>
         <h1>
           Susana
           <br />
-          Sánchez Restrepo
+          <span className="hero-last-name">Sánchez Restrepo</span>
         </h1>
         <p className="subtitle">
-          I design robotic systems that work with people — not the other way
-          around.
+          I design complex interactive systems that work with people, not the
+          other way around.
         </p>
         <nav className="page-nav" aria-label="Sections">
           <div className="nav-group">
@@ -37,16 +37,16 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
             </button>
             <button
               type="button"
-              className={`nav-link ${activeSection === 'recommendations' ? 'active' : ''}`}
-              onClick={() => setActiveSection('recommendations')}
-              aria-current={activeSection === 'recommendations' ? 'true' : undefined}
+              className={`nav-link ${activeSection === 'user-centered' ? 'active' : ''}`}
+              onClick={() => setActiveSection('user-centered')}
+              aria-current={activeSection === 'user-centered' ? 'true' : undefined}
               aria-controls={
-                activeSection === 'recommendations'
-                  ? sectionPanelIds.recommendations
+                activeSection === 'user-centered'
+                  ? sectionPanelIds['user-centered']
                   : undefined
               }
             >
-              What They Say
+              User-Centered Development
             </button>
             <button
               type="button"
@@ -58,6 +58,19 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
               }
             >
               Publications
+            </button>
+            <button
+              type="button"
+              className={`nav-link ${activeSection === 'recommendations' ? 'active' : ''}`}
+              onClick={() => setActiveSection('recommendations')}
+              aria-current={activeSection === 'recommendations' ? 'true' : undefined}
+              aria-controls={
+                activeSection === 'recommendations'
+                  ? sectionPanelIds.recommendations
+                  : undefined
+              }
+            >
+              What They Say
             </button>
           </div>
           {showInBetween && (
@@ -78,7 +91,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
             </div>
           )}
           <div className="nav-group">
-            <div className="nav-group-label">Robotics</div>
+            <div className="nav-group-label">Interactive systems</div>
             <button
               type="button"
               className={`nav-link ${activeSection === 'current' ? 'active' : ''}`}
@@ -86,20 +99,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
               aria-current={activeSection === 'current' ? 'true' : undefined}
               aria-controls={activeSection === 'current' ? sectionPanelIds.current : undefined}
             >
-              Current role
-            </button>
-            <button
-              type="button"
-              className={`nav-link ${activeSection === 'industrial-robotics' ? 'active' : ''}`}
-              onClick={() => setActiveSection('industrial-robotics')}
-              aria-current={activeSection === 'industrial-robotics' ? 'true' : undefined}
-              aria-controls={
-                activeSection === 'industrial-robotics'
-                  ? sectionPanelIds['industrial-robotics']
-                  : undefined
-              }
-            >
-              Industrial robotics
+              Current Role
             </button>
             <button
               type="button"
@@ -112,7 +112,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
                   : undefined
               }
             >
-              Assistive robotics
+              Assistive & Medical Devices
             </button>
             <button
               type="button"
@@ -123,7 +123,20 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
                 activeSection === 'social-robotics' ? sectionPanelIds['social-robotics'] : undefined
               }
             >
-              Social robotics
+              Human-Robot Interaction
+            </button>
+            <button
+              type="button"
+              className={`nav-link ${activeSection === 'industrial-robotics' ? 'active' : ''}`}
+              onClick={() => setActiveSection('industrial-robotics')}
+              aria-current={activeSection === 'industrial-robotics' ? 'true' : undefined}
+              aria-controls={
+                activeSection === 'industrial-robotics'
+                  ? sectionPanelIds['industrial-robotics']
+                  : undefined
+              }
+            >
+              Industrial Robotics
             </button>
           </div>
           <div className="nav-group">
@@ -144,7 +157,7 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
               aria-current={activeSection === 'cercle' ? 'true' : undefined}
               aria-controls={activeSection === 'cercle' ? sectionPanelIds.cercle : undefined}
             >
-              Le cercle des robots disparus
+              Le Cercle des Robots Disparus
             </button>
             <button
               type="button"
