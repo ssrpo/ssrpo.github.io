@@ -23,113 +23,123 @@ export function SectionContent({
     <>
       {activeSection === 'about' && (
         <section className="section" id="about" aria-labelledby="about-heading">
-          <h2 id="about-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            What I do
-          </h2>
-          <div className="about-flow">
-            <figure className="profile-portrait">
-              <img
-                src={profileImage}
-                alt="Portrait of Susana Sanchez Restrepo"
-                loading="lazy"
-              />
-            </figure>
-            <p>
-              I design complex interactive systems for real-world use, combining
-              robotics engineering, software architecture, product thinking and
-              multidisciplinary coordination.
-            </p>
-            <p>
-              My background spans research, industry and product environments,
-              from industrial robotics and interactive machines to assistive
-              robotics and medical devices, with a constant focus on systems that
-              are robust, understandable and deployable.
-            </p>
-            <p>
-              I work across control, distributed software, interfaces,
-              experimentation, product framing and project steering. I am most at
-              home where technical complexity meets real users, operational
-              constraints and the need to make good decisions collectively.
-            </p>
+          <div className="section-header">
+            <h2 id="about-heading" ref={sectionHeadingRef} tabIndex={-1}>
+              What I do
+            </h2>
+            <div className="about-flow">
+              <figure className="profile-portrait">
+                <img
+                  src={profileImage}
+                  alt="Portrait of Susana Sanchez Restrepo"
+                  loading="lazy"
+                />
+              </figure>
+              <p className="section-lead">
+                I design complex interactive systems for real-world use, combining
+                robotics engineering, software architecture, product thinking and
+                multidisciplinary coordination.
+              </p>
+              <p>
+                My background spans research, industry and product environments,
+                from industrial robotics and interactive machines to assistive
+                robotics and medical devices, with a constant focus on systems that
+                are robust, understandable and deployable.
+              </p>
+              <p>
+                I work across control, distributed software, interfaces,
+                experimentation, product framing and project steering. I am most at
+                home where technical complexity meets real users, operational
+                constraints and the need to make good decisions collectively.
+              </p>
+            </div>
           </div>
-          <p>
-            Concretely, this includes real-time control laws, robot-agnostic
-            software architectures, teleoperation and supervision interfaces,
-            product specifications, roadmap contributions, and validation on
-            real platforms rather than only in isolated prototypes.
-          </p>
-          <p>
-            I have worked on collaborative robots in factories, mobile
-            logistics robots, humanoid and social robots, and assistive
-            manipulators for people with disabilities. Across these different
-            contexts, I keep returning to the same question: how can complex
-            systems become both technically strong and genuinely useful for the
-            people who interact with them?
-          </p>
-          <p>
-            My work also often sits at the interface between disciplines. I am
-            comfortable translating between researchers, engineers, users,
-            clinicians, product stakeholders, partners and clients, and I see
-            that translation as part of the technical work, not as something
-            separate from it.
-          </p>
-          <p>
-            Alongside project work, I contribute through expert review,
-            community coordination and association projects, from France 2030
-            and ROSCon France to user-centered and cultural initiatives.
-            Together, these activities reflect the broader vision
-            behind my work: complex systems as technical objects, but also as
-            human, social and collective realities.
-          </p>
+          <div className="section-body">
+            <div className="content-stack">
+              <p>
+                Concretely, this includes real-time control laws, robot-agnostic
+                software architectures, teleoperation and supervision interfaces,
+                product specifications, roadmap contributions, and validation on
+                real platforms rather than only in isolated prototypes.
+              </p>
+              <p>
+                I have worked on collaborative robots in factories, mobile
+                logistics robots, humanoid and social robots, and assistive
+                manipulators for people with disabilities. Across these different
+                contexts, I keep returning to the same question: how can complex
+                systems become both technically strong and genuinely useful for the
+                people who interact with them?
+              </p>
+              <p>
+                My work also often sits at the interface between disciplines. I am
+                comfortable translating between researchers, engineers, users,
+                clinicians, product stakeholders, partners and clients, and I see
+                that translation as part of the technical work, not as something
+                separate from it.
+              </p>
+              <p>
+                Alongside project work, I contribute through expert review,
+                community coordination and association projects, from France 2030
+                and ROSCon France to user-centered and cultural initiatives.
+                Together, these activities reflect the broader vision
+                behind my work: complex systems as technical objects, but also as
+                human, social and collective realities.
+              </p>
+            </div>
+          </div>
         </section>
       )}
 
       {activeSection === 'recommendations' && (
         <section className="section" id="recommendations" aria-labelledby="recommendations-heading">
-          <h2 id="recommendations-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            What They Say
-          </h2>
-          <p>
-            Selected words from collaborators across research, product and
-            industrial environments. These recommendations reflect the same
-            patterns I try to bring to projects: technical depth, product
-            clarity, interdisciplinary thinking and care for people.
-          </p>
-          <div className="quote-grid">
-            <article className="quote-card">
-              <p className="quote-text">
-                “une vision transverse de la robotique qui intègre pleinement
-                les sciences humaines”
-              </p>
-              <p className="quote-meta">David Gouaillier · ORTHOPUS</p>
-            </article>
-            <article className="quote-card">
-              <p className="quote-text">
-                “First impressed by her robotics and software engineering
-                skills, we rapidly were amazed how quick she learned HRI”
-              </p>
-              <p className="quote-meta">Marine Chamoux · SoftBank Robotics Europe</p>
-            </article>
-            <article className="quote-card">
-              <p className="quote-text">
-                “I would describe Susana as a software engineer with a strong
-                product mindset.”
-              </p>
-              <p className="quote-meta">Miriam Bilać · SoftBank Robotics Europe</p>
-            </article>
-            <article className="quote-card">
-              <p className="quote-text">
-                “Elle sait également prendre les décisions qu'il faut au bon moment.”
-              </p>
-              <p className="quote-meta">Clément Hénichard · Niryo</p>
-            </article>
-            <article className="quote-card">
-              <p className="quote-text">
-                “Susana can break down complex problems into simple terms,
-                making presentations much clearer.”
-              </p>
-              <p className="quote-meta">Damien Toomey · SoftBank Robotics Europe</p>
-            </article>
+          <div className="section-header">
+            <h2 id="recommendations-heading" ref={sectionHeadingRef} tabIndex={-1}>
+              What They Say
+            </h2>
+            <p className="section-lead">
+              Selected words from collaborators across research, product and
+              industrial environments. These recommendations reflect the same
+              patterns I try to bring to projects: technical depth, product
+              clarity, interdisciplinary thinking and care for people.
+            </p>
+          </div>
+          <div className="section-body">
+            <div className="quote-grid card-stack">
+              <article className="quote-card">
+                <p className="quote-text">
+                  “une vision transverse de la robotique qui intègre pleinement
+                  les sciences humaines”
+                </p>
+                <p className="quote-meta">David Gouaillier · ORTHOPUS</p>
+              </article>
+              <article className="quote-card">
+                <p className="quote-text">
+                  “First impressed by her robotics and software engineering
+                  skills, we rapidly were amazed how quick she learned HRI”
+                </p>
+                <p className="quote-meta">Marine Chamoux · SoftBank Robotics Europe</p>
+              </article>
+              <article className="quote-card">
+                <p className="quote-text">
+                  “I would describe Susana as a software engineer with a strong
+                  product mindset.”
+                </p>
+                <p className="quote-meta">Miriam Bilać · SoftBank Robotics Europe</p>
+              </article>
+              <article className="quote-card">
+                <p className="quote-text">
+                  “Elle sait également prendre les décisions qu'il faut au bon moment.”
+                </p>
+                <p className="quote-meta">Clément Hénichard · Niryo</p>
+              </article>
+              <article className="quote-card">
+                <p className="quote-text">
+                  “Susana can break down complex problems into simple terms,
+                  making presentations much clearer.”
+                </p>
+                <p className="quote-meta">Damien Toomey · SoftBank Robotics Europe</p>
+              </article>
+            </div>
           </div>
         </section>
       )}
@@ -223,39 +233,45 @@ export function SectionContent({
 
       {activeSection === 'current' && (
         <section className="section" id="current-work" aria-labelledby="current-work-heading">
-          <h2 id="current-work-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            Current Role — Robotics Research Engineer
-          </h2>
-          <p>
-            ISIR · Sorbonne University, Paris
-          </p>
-          <p>
-            I currently work on the control and software architecture of
-            assistive robotic manipulators at ISIR (Sorbonne University),
-            within the{' '}
-            <a
-              href="https://orthopus.com/explorer/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Extender
-            </a>{' '}
-            project. The goal is to enable wheelchair users to perform everyday
-            tasks using an assistive robotic arm developed in a medical-device
-            context and deployed in real-world conditions.
-          </p>
-          <p>
-            This work sits at the intersection of robotic control, software
-            modularity, user studies and clinical realities. It requires both
-            technical depth and close coordination between laboratory,
-            industrial and care-oriented stakeholders.
-          </p>
-          <p>
-            A significant part of my role consists of clarifying needs,
-            structuring specifications, contributing to roadmap decisions,
-            aligning stakeholders and making sure the software remains coherent
-            across technical, clinical and user constraints.
-          </p>
+          <div className="section-header">
+            <h2 id="current-work-heading" ref={sectionHeadingRef} tabIndex={-1}>
+              Current Role — Robotics Research Engineer
+            </h2>
+            <p className="section-meta">
+              ISIR · Sorbonne University, Paris
+            </p>
+          </div>
+          <div className="section-body section-blocks">
+            <div className="content-stack">
+              <p className="section-lead">
+                I currently work on the control and software architecture of
+                assistive robotic manipulators at ISIR (Sorbonne University),
+                within the{' '}
+                <a
+                  href="https://orthopus.com/explorer/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Extender
+                </a>{' '}
+                project. The goal is to enable wheelchair users to perform everyday
+                tasks using an assistive robotic arm developed in a medical-device
+                context and deployed in real-world conditions.
+              </p>
+              <p>
+                This work sits at the intersection of robotic control, software
+                modularity, user studies and clinical realities. It requires both
+                technical depth and close coordination between laboratory,
+                industrial and care-oriented stakeholders.
+              </p>
+              <p>
+                A significant part of my role consists of clarifying needs,
+                structuring specifications, contributing to roadmap decisions,
+                aligning stakeholders and making sure the software remains coherent
+                across technical, clinical and user constraints.
+              </p>
+            </div>
+          </div>
 
           <h3>Technical Activities</h3>
           <ul className="focus-list">
@@ -389,114 +405,131 @@ export function SectionContent({
 
       {activeSection === 'assistive-robotics' && (
         <section className="section" id="assistive-robotics" aria-labelledby="assistive-robotics-heading">
-          <h2 id="assistive-robotics-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            Assistive & Medical Devices
-          </h2>
-          <p>
-            Assistive robotics and medical devices have been a long-running
-            thread in my work, from my Ph.D. on human-robot comanipulation in
-            industrial settings to my current work on robotic assistance for
-            people with disabilities in a medical-device context.
-          </p>
-          <p>
-            My doctoral research focused on helping people work with
-            collaborative robots in factories through more intuitive physical
-            interaction. The core question was how to make cobots easier to
-            guide, more comfortable to work with and more teachable through
-            demonstration instead of rigid programming alone.
-          </p>
-          <p>
-            In that work, I explored comanipulation scenarios where a person and
-            a collaborative robot share a task, and proposed methods to create
-            robot assistance skills by demonstration. A central contribution was
-            an iterative approach based on kinesthetic teaching and displacement
-            splines, allowing workers to teach virtual guides that support the
-            robot during the task while preserving flexibility and comfort.
-          </p>
-          <p>
-            Today, this vision continues in a different context through the{' '}
-            <a href="https://orthopus.com/explorer/" target="_blank" rel="noreferrer">
-              Extender
-            </a>{' '}
-            project at ISIR, where assistive robotics is directed toward daily
-            autonomy. The goal is to help wheelchair users operate a robotic arm
-            in real life, through control interfaces and interaction strategies
-            that are technically robust but also usable, safe and respectful of
-            the user&apos;s own way of acting.
-          </p>
-          <p>
-            What connects the Ph.D. and the current work is the same underlying
-            belief: assistance is not about replacing human agency. It is about
-            building robotic systems that adapt to people, learn from how they
-            move and collaborate, and provide support without taking over.
-          </p>
-          <p>
-            The software dimension of this work is also visible in the open{' '}
-            <a href="https://github.com/ISIR-EXTENDER" target="_blank" rel="noreferrer">
-              ISIR-EXTENDER
-            </a>{' '}
-            ecosystem: a modular ROS2 stack for teleoperation and control
-            research, with reusable robot interfaces, pluggable controllers and
-            operator tools built across C++, Python, FastAPI, React and
-            TypeScript.
-          </p>
-          <figure className="section-visual">
-            <div className="section-visual-pair">
-              <img
-                src={explorerImage}
-                alt="Explorer assistive robotic arm for daily autonomy"
-                loading="lazy"
-              />
-              <img
-                src={explorerManImage}
-                alt="Illustration of assistive robotics supporting autonomy from a wheelchair"
-                loading="lazy"
+          <div className="section-header">
+            <h2 id="assistive-robotics-heading" ref={sectionHeadingRef} tabIndex={-1}>
+              Assistive & Medical Devices
+            </h2>
+            <div className="content-stack">
+              <p className="section-lead">
+                Assistive robotics and medical devices have been a long-running
+                thread in my work, from my Ph.D. on human-robot comanipulation in
+                industrial settings to my current work on robotic assistance for
+                people with disabilities in a medical-device context.
+              </p>
+              <p>
+                My doctoral research focused on helping people work with
+                collaborative robots in factories through more intuitive physical
+                interaction. The core question was how to make cobots easier to
+                guide, more comfortable to work with and more teachable through
+                demonstration instead of rigid programming alone.
+              </p>
+              <p>
+                In that work, I explored comanipulation scenarios where a person and
+                a collaborative robot share a task, and proposed methods to create
+                robot assistance skills by demonstration. A central contribution was
+                an iterative approach based on kinesthetic teaching and displacement
+                splines, allowing workers to teach virtual guides that support the
+                robot during the task while preserving flexibility and comfort.
+              </p>
+              <p>
+                Assistive robotics, for me, means designing devices that are
+                technically capable and genuinely compatible with everyday human
+                life.
+              </p>
+            </div>
+          </div>
+          <div className="section-body section-blocks">
+            <div className="content-stack">
+              <p>
+                Today, this vision continues in a different context through the{' '}
+                <a href="https://orthopus.com/explorer/" target="_blank" rel="noreferrer">
+                  Extender
+                </a>{' '}
+                project at ISIR, where the question becomes one of daily autonomy.
+                The goal is to help wheelchair users operate a robotic arm in real
+                life, through control interfaces and interaction strategies that are
+                technically robust, clinically relevant and respectful of the
+                user&apos;s own way of acting.
+              </p>
+              <p>
+                What connects the Ph.D. and the current work is the same
+                engineering and product question: how to build assistance that
+                remains adaptable, understandable and useful without taking agency
+                away from the person.
+              </p>
+              <p>
+                The software dimension of this work is also visible in the open{' '}
+                <a href="https://github.com/ISIR-EXTENDER" target="_blank" rel="noreferrer">
+                  ISIR-EXTENDER
+                </a>{' '}
+                ecosystem: a modular ROS2 stack for teleoperation and control
+                research, with reusable robot interfaces, pluggable controllers and
+                operator tools built across C++, Python, FastAPI, React and
+                TypeScript. It reflects the kind of technical foundation I care
+                about in assistive systems: reusable, testable and connected to
+                real usage constraints.
+              </p>
+            </div>
+            <figure className="section-visual">
+              <div className="section-visual-pair">
+                <img
+                  src={explorerImage}
+                  alt="Explorer assistive robotic arm for daily autonomy"
+                  loading="lazy"
+                />
+                <img
+                  src={explorerManImage}
+                  alt="Illustration of assistive robotics supporting autonomy from a wheelchair"
+                  loading="lazy"
               />
             </div>
             <figcaption>
-              Assistive robotics, for me, means designing devices that are
-              technically capable and genuinely compatible with everyday human
-              life.
+              Explorer robot by ORTHOPUS.
             </figcaption>
           </figure>
-
-          <h3>Technical and Product Dimensions</h3>
-          <ul className="focus-list">
-            <li>Shared control and teleoperation strategies for assistive manipulators in real tasks</li>
-            <li>Robot-agnostic software architecture designed for reuse across platforms and experiments</li>
-            <li>Operator interfaces and feedback loops shaped by usability, safety and deployment constraints</li>
-            <li>Continuity between industrial comanipulation research and assistive systems for daily autonomy</li>
-          </ul>
+            <div>
+              <h3>Technical and Product Dimensions</h3>
+              <ul className="focus-list">
+                <li>Shared control and teleoperation strategies for assistive manipulators in real tasks</li>
+                <li>Robot-agnostic software architecture designed for reuse across platforms and experiments</li>
+                <li>Operator interfaces and feedback loops shaped by usability, safety and deployment constraints</li>
+                <li>Continuity between industrial comanipulation research and assistive systems for daily autonomy</li>
+              </ul>
+            </div>
+          </div>
         </section>
       )}
 
       {activeSection === 'publications' && (
         <section className="section" id="publications" aria-labelledby="publications-heading">
-          <h2 id="publications-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            Publications & Videos
-          </h2>
-          <div className="section-intro">
-            <p>
-              I write and share work at the intersection of robotics,
-              human–machine interaction and assistive technology — from
-              peer-reviewed research to practical
-              talks and long-form articles.
-            </p>
-            <p>
-              This page collects a few entry points. If you're new here,
-              start with the PhD thesis for depth, or the talks and
-              articles for a more accessible
-              overview.
-            </p>
+          <div className="section-header">
+            <h2 id="publications-heading" ref={sectionHeadingRef} tabIndex={-1}>
+              Publications & Videos
+            </h2>
+            <div className="section-intro content-stack">
+              <p className="section-lead">
+                I write and share work at the intersection of robotics,
+                human–machine interaction and assistive technology — from
+                peer-reviewed research to practical
+                talks and long-form articles.
+              </p>
+              <p>
+                This page collects a few entry points. If you're new here,
+                start with the PhD thesis for depth, or the talks and
+                articles for a more accessible
+                overview.
+              </p>
+            </div>
           </div>
-          <div className="content-groups">
+          <div className="section-body">
+            <div className="content-groups">
             {publicationGroups.map((group) => (
               <section key={group.title} className="content-group">
                 <div className="group-header">
                   <h3>{group.title}</h3>
                   <p className="group-description">{group.description}</p>
                 </div>
-                <div className="card-list">
+                <div className="card-list card-stack">
                   {group.items.map((item) => (
                     <a
                       key={item.title}
@@ -527,70 +560,75 @@ export function SectionContent({
                 </div>
               </section>
             ))}
+            </div>
           </div>
         </section>
       )}
 
       {activeSection === 'social-robotics' && (
         <section className="section" id="social-robotics" aria-labelledby="social-robotics-heading">
-          <h2 id="social-robotics-heading" ref={sectionHeadingRef} tabIndex={-1}>
-            Human-Robot Interaction
-          </h2>
-          <p className="interest-description">
-            Human-robot interaction has been one of the places where I explored
-            perception, context-awareness, expressive behavior and embodied
-            interfaces most directly. In these projects, the challenge is not
-            only to make a robot function, but to make its behavior legible,
-            adaptive and meaningful for the people around it.
-          </p>
-          <div className="robot-entry">
-            <h3 className="interest-title">SoftBank Robotics Europe</h3>
-            <div className="robot-meta">Humanoid and social robotics in real-world contexts</div>
-            <p className="robot-description">
-              At SoftBank Robotics Europe, I worked on perception and
-              interaction modules for humanoid and social robots, especially
-              around Pepper. The work combined C++ and Python development with
-              context understanding, environment analysis and expressive
-              interaction design.
+          <div className="section-header">
+            <h2 id="social-robotics-heading" ref={sectionHeadingRef} tabIndex={-1}>
+              Human-Robot Interaction
+            </h2>
+            <p className="section-lead">
+              Human-robot interaction has been one of the places where I explored
+              perception, context-awareness, expressive behavior and embodied
+              interfaces most directly. In these projects, the challenge is not
+              only to make a robot function, but to make its behavior legible,
+              adaptive and meaningful for the people around it.
             </p>
-            <p className="robot-description">
-              A strong part of this work focused on expressive voice and social
-              interaction, combining robotics with affective computing, natural
-              language processing and human-robot interaction research. It also
-              included collaboration with PhD researchers in the H2020 ANIMATAS
-              project and supervision of student work.
-            </p>
-            <ul className="robot-sublist">
-              <li>Environment awareness and perception strategies for social interaction</li>
-              <li>Research in affective computing, emotion theories and NLP for robotics</li>
-              <li>Expressive TTS systems using machine learning and deep learning</li>
-              <li>Contextual prosody modulation and emotion-aware voice synthesis</li>
-              <li>Collaboration with PhD researchers in the H2020 ANIMATAS project</li>
-            </ul>
           </div>
+          <div className="section-body section-blocks">
+            <div className="robot-entry">
+              <h3 className="interest-title">SoftBank Robotics Europe</h3>
+              <div className="robot-meta">Humanoid and social robotics in real-world contexts</div>
+              <p className="robot-description">
+                At SoftBank Robotics Europe, I worked on perception and
+                interaction modules for humanoid and social robots, especially
+                around Pepper. The work combined C++ and Python development with
+                context understanding, environment analysis and expressive
+                interaction design.
+              </p>
+              <p className="robot-description">
+                A strong part of this work focused on expressive voice and social
+                interaction, combining robotics with affective computing, natural
+                language processing and human-robot interaction research. It also
+                included collaboration with PhD researchers in the H2020 ANIMATAS
+                project and supervision of student work.
+              </p>
+              <ul className="robot-sublist">
+                <li>Environment awareness and perception strategies for social interaction</li>
+                <li>Research in affective computing, emotion theories and NLP for robotics</li>
+                <li>Expressive TTS systems using machine learning and deep learning</li>
+                <li>Contextual prosody modulation and emotion-aware voice synthesis</li>
+                <li>Collaboration with PhD researchers in the H2020 ANIMATAS project</li>
+              </ul>
+            </div>
 
-          <div className="robot-entry">
-            <h3 className="interest-title">ISIR and humanoid/social interaction research</h3>
-            <div className="robot-meta">Humanoid and assistive interaction in research settings</div>
-            <p className="robot-description">
-              At ISIR, this line of interest continues through interaction work
-              around humanoid and social robots, including robots designed for
-              healthcare and assistive environments. What matters to me here is
-              not the robot as an object, but the quality of the relationship it
-              creates with users, caregivers and surrounding teams.
-            </p>
-            <p className="robot-description">
-              This work extends questions I have been exploring for years:
-              how embodied systems are perceived, how interaction becomes more
-              intuitive and how technical design can support social presence
-              without becoming superficial or overly scripted.
-            </p>
-            <ul className="robot-sublist">
-              <li>Humanoid and social interaction as a complement to control and systems work</li>
-              <li>Attention to perception, expressivity and trust in embodied robotics</li>
-              <li>Experience bridging engineering, research and human-centered design questions</li>
-              <li>Continuity between social robotics and today&apos;s assistive robotics work</li>
-            </ul>
+            <div className="robot-entry">
+              <h3 className="interest-title">ISIR and humanoid/social interaction research</h3>
+              <div className="robot-meta">Humanoid and assistive interaction in research settings</div>
+              <p className="robot-description">
+                At ISIR, this line of interest continues through interaction work
+                around humanoid and social robots, including robots designed for
+                healthcare and assistive environments. What matters to me here is
+                not the robot as an object, but the quality of the relationship it
+                creates with users, caregivers and surrounding teams.
+              </p>
+              <p className="robot-description">
+                This work extends questions I have been exploring for years:
+                how embodied systems are perceived, how interaction becomes more
+                intuitive and how technical design can support social presence
+                without becoming superficial or overly scripted.
+              </p>
+              <ul className="robot-sublist">
+                <li>Humanoid and social interaction as a complement to control and systems work</li>
+                <li>Attention to perception, expressivity and trust in embodied robotics</li>
+                <li>Experience bridging engineering, research and human-centered design questions</li>
+                <li>Continuity between social robotics and today&apos;s assistive robotics work</li>
+              </ul>
+            </div>
           </div>
         </section>
       )}
