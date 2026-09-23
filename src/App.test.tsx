@@ -11,6 +11,7 @@ describe('App', () => {
     render(<App />)
 
     expect(screen.getByRole('heading', { name: 'What I do' })).toBeInTheDocument()
+    expect(screen.getByRole('list', { name: 'Selected impact' })).toBeInTheDocument()
   })
 
   it('switches section when a nav button is clicked', async () => {
@@ -30,14 +31,14 @@ describe('App', () => {
 
     await user.click(
       screen.getByRole('button', {
-        name: /Human-Robot Interaction/i,
+        name: /Robotics Engineering/i,
       }),
     )
 
-    const heading = screen.getByRole('heading', { name: /Human-Robot Interaction/i })
+    const heading = screen.getByRole('heading', { name: /Robotics Engineering/i })
     expect(heading).toHaveFocus()
     expect(
-      screen.getByText('Showing Human-Robot Interaction section'),
+      screen.getByText('Showing Robotics Engineering section'),
     ).toBeInTheDocument()
   })
 
@@ -53,7 +54,7 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: 'Assistive & Medical Devices' }))
     expect(await axe(container)).toHaveNoViolations()
 
-    await user.click(screen.getByRole('button', { name: 'Extender & Bloom' }))
+    await user.click(screen.getByRole('button', { name: 'Bloom Case Study' }))
     expect(await axe(container)).toHaveNoViolations()
   })
 
@@ -64,7 +65,7 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: 'Current Role' }))
     expect(screen.getByText(/Echosens · Paris · from October 2026/)).toBeInTheDocument()
 
-    await user.click(screen.getByRole('button', { name: 'Extender & Bloom' }))
+    await user.click(screen.getByRole('button', { name: 'Bloom Case Study' }))
     expect(
       screen.getByRole('link', { name: 'Bloom' }),
     ).toHaveAttribute('href', 'https://github.com/ISIR-EXTENDER/bloom')

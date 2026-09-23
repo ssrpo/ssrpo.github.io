@@ -30,17 +30,23 @@ I built this site to share my work in robotics, software, human-centered design,
 
 ## Current site structure
 
-- `What I do`: high-level profile and scope of work
-- `What They Say`: selected collaborator recommendations
-- `Current role`: Senior Product Owner Software at Echosens, Paris
-- `Extender & Bloom`: assistive robotics at ISIR / Sorbonne Universite and the Bloom operator interface
-- `Industrial robotics`: industry-focused robotics experience
-- `Assistive robotics`: PhD and current assistive robotics vision
-- `Social robotics`: humanoid and interaction-focused robotics work
-- `Engagements`: France 2030, ROSCon France, and association work
-- `Le cercle des robots disparus`: dedicated association project section
-- `Publications`: thesis, writing, talks, and videos
-- `Interests`: creative and personal threads connected to the work
+Navigation groups live in `src/types/content.ts` (`navGroups`).
+
+- Profile
+  - `What I do`: profile, impact strip and scope of work
+  - `What They Say`: selected collaborator recommendations
+  - `User-Centered Development`: how users shape technical and product decisions
+  - `Work & Writing`: open-source software, thesis, writing, talks and videos
+- Product & medtech
+  - `Current Role`: Senior Product Owner Software at Echosens, Paris
+  - `Bloom Case Study`: the Extender operator interface as a product case study
+  - `Assistive & Medical Devices`: PhD, Extender and the assistive robotics thread
+- Engineering background
+  - `Robotics Engineering`: industrial, logistics, humanoid and social robotics work
+- Community
+  - `Engagements`: France 2030, ROSCon France and the Paris Cybathlétique Club
+  - `Le Cercle des Robots Disparus`: dedicated association project section
+  - `Interests`: creative and personal threads connected to the work
 
 ## Run locally
 

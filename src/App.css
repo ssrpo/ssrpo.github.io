@@ -869,3 +869,57 @@
     height: 24px;
   }
 }
+
+.impact-strip {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-3);
+  max-width: 760px;
+}
+
+.impact-tile {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.impact-value {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--accent-yellow);
+}
+
+.impact-label {
+  font-size: var(--font-size-body-sm);
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.decision-list li strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.contact-line {
+  margin: var(--space-6) 0 0;
+  max-width: 28rem;
+  font-size: var(--font-size-body-sm);
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.contact-line a {
+  color: var(--accent-yellow);
+}
+
+.about-details {
+  margin-top: var(--space-6);
+}
