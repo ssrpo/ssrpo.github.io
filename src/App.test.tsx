@@ -52,5 +52,21 @@ describe('App', () => {
 
     await user.click(screen.getByRole('button', { name: 'Assistive & Medical Devices' }))
     expect(await axe(container)).toHaveNoViolations()
+
+    await user.click(screen.getByRole('button', { name: 'Extender & Bloom' }))
+    expect(await axe(container)).toHaveNoViolations()
+  })
+
+  it('shows the Echosens role and the Bloom repository', async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole('button', { name: 'Current Role' }))
+    expect(screen.getByText(/Echosens · Paris · from October 2026/)).toBeInTheDocument()
+
+    await user.click(screen.getByRole('button', { name: 'Extender & Bloom' }))
+    expect(
+      screen.getByRole('link', { name: 'Bloom' }),
+    ).toHaveAttribute('href', 'https://github.com/ISIR-EXTENDER/bloom')
   })
 })

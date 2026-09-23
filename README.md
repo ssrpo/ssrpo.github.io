@@ -32,7 +32,8 @@ I built this site to share my work in robotics, software, human-centered design,
 
 - `What I do`: high-level profile and scope of work
 - `What They Say`: selected collaborator recommendations
-- `Current role`: current work in assistive robotics at ISIR / Sorbonne Universite
+- `Current role`: Senior Product Owner Software at Echosens, Paris
+- `Extender & Bloom`: assistive robotics at ISIR / Sorbonne Universite and the Bloom operator interface
 - `Industrial robotics`: industry-focused robotics experience
 - `Assistive robotics`: PhD and current assistive robotics vision
 - `Social robotics`: humanoid and interaction-focused robotics work

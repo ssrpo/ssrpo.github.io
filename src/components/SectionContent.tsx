@@ -2,6 +2,7 @@ import type { RefObject } from 'react'
 import explorerImage from '../assets/explorer.png'
 import explorerManImage from '../assets/explorer_man.png'
 import profileImage from '../assets/ssr_profile_isir.webp'
+import { bloomDriveScreenshot, bloomRepoUrl, extenderOrgUrl } from '../content/siteContent'
 import type { PublicationGroup, SectionId } from '../types/content'
 
 type SectionContentProps = {
@@ -44,7 +45,12 @@ export function SectionContent({
                 My background spans research, industry and product environments,
                 from industrial robotics and interactive machines to assistive
                 robotics and medical devices, with a constant focus on systems that
-                are robust, understandable and deployable.
+                are robust, understandable and deployable. From October 2026, I
+                bring this to medtech as Senior Product Owner Software at{' '}
+                <a href="https://www.echosens.com/" target="_blank" rel="noreferrer">
+                  Echosens
+                </a>{' '}
+                in Paris.
               </p>
               <p>
                 I work across control, distributed software, interfaces,
@@ -80,8 +86,8 @@ export function SectionContent({
               <p>
                 Alongside project work, I contribute through expert review,
                 community coordination and association projects, from France 2030
-                and ROSCon France to user-centered and cultural initiatives.
-                Together, these activities reflect the broader vision
+                and ROSCon France to the Paris Cybathlétique Club and cultural
+                initiatives. Together, these activities reflect the broader vision
                 behind my work: complex systems as technical objects, but also as
                 human, social and collective realities.
               </p>
@@ -165,11 +171,19 @@ export function SectionContent({
             it.
           </p>
           <p>
-            Today, this approach continues in assistive robotics through the
-            Extender project, where technical choices are constantly shaped by
-            user workshops, clinical realities and the question of how a robotic
-            arm can support daily autonomy without taking agency away from the
-            person using it.
+            This approach shaped my assistive robotics work on the Extender
+            project, where technical choices were constantly driven by user
+            workshops, clinical realities and the question of how a robotic arm
+            can support daily autonomy without taking agency away from the
+            person using it. Bloom, the operator interface I built for it, was
+            designed around accessible input profiles and a review checklist
+            before any screen reaches a user.
+          </p>
+          <p>
+            It is also what I carry into product ownership in medtech: the
+            product is not the feature list, but the experience a clinician or a
+            patient has with the device, inside real workflows and real
+            constraints.
           </p>
           <p>
             It has also shaped my software and product work. Through Banana Army
@@ -235,105 +249,153 @@ export function SectionContent({
         <section className="section" id="current-work" aria-labelledby="current-work-heading">
           <div className="section-header">
             <h2 id="current-work-heading" ref={sectionHeadingRef} tabIndex={-1}>
-              Current Role — Robotics Research Engineer
+              Current Role — Senior Product Owner Software
             </h2>
             <p className="section-meta">
-              ISIR · Sorbonne University, Paris
+              Echosens · Paris · from October 2026
             </p>
           </div>
           <div className="section-body section-blocks">
             <div className="content-stack">
               <p className="section-lead">
-                I currently work on the control and software architecture of
-                assistive robotic manipulators at ISIR (Sorbonne University),
-                within the{' '}
-                <a
-                  href="https://orthopus.com/explorer/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Extender
+                From October 2026, I join{' '}
+                <a href="https://www.echosens.com/" target="_blank" rel="noreferrer">
+                  Echosens
                 </a>{' '}
-                project. The goal is to enable wheelchair users to perform everyday
-                tasks using an assistive robotic arm developed in a medical-device
-                context and deployed in real-world conditions.
+                in Paris as Senior Product Owner Software. Echosens develops
+                FibroScan, a non-invasive medical device for the assessment of
+                chronic liver disease, used by clinicians in more than 100
+                countries.
               </p>
               <p>
-                This work sits at the intersection of robotic control, software
-                modularity, user studies and clinical realities. It requires both
-                technical depth and close coordination between laboratory,
-                industrial and care-oriented stakeholders.
+                I own the software side of the product: turning clinical, user and
+                business needs into a clear vision, roadmap and backlog, and
+                prioritising with R&amp;D, clinical, regulatory, quality and market
+                teams so that what ships is coherent, usable and compliant.
               </p>
               <p>
-                A significant part of my role consists of clarifying needs,
-                structuring specifications, contributing to roadmap decisions,
-                aligning stakeholders and making sure the software remains coherent
-                across technical, clinical and user constraints.
+                This role brings together what I have practised across robotics
+                and assistive technology: framing products for complex, regulated
+                systems, keeping the user at the centre of technical decisions, and
+                steering multidisciplinary teams from discovery to delivery.
               </p>
             </div>
           </div>
 
-          <h3>Technical Activities</h3>
+          <h3>What I focus on</h3>
           <ul className="focus-list">
-            <li>
-              Real-time control laws for assistive manipulators (C++ and ROS 2)
-            </li>
-            <li>Modular and robot-agnostic software architectures</li>
-            <li>
-              Shared-control strategies for assistive manipulation
-            </li>
-            <li>
-              Web interfaces for teleoperation and experiments (FastAPI and React)
-            </li>
-            <li>
-              Shared software foundations deployed across several robot platforms
-            </li>
+            <li>Product ownership of medical-device software: vision, roadmap, backlog and release scope</li>
+            <li>Discovery with clinicians, users and market teams, translated into specifications engineers can build</li>
+            <li>Working within medical-device constraints: risk management, usability engineering and the software lifecycle</li>
+            <li>Cross-functional alignment between R&amp;D, clinical, regulatory, quality and business stakeholders</li>
           </ul>
 
-          <h3>Research Activities</h3>
+          <h3>Why medtech</h3>
           <ul className="focus-list">
-            <li>
-              Research in shared control and assistive robotics
-            </li>
-            <li>
-              Bridging control, interaction and real-world usage
-            </li>
-            <li>
-              Scientific writing and paper submissions (ICRA)
-            </li>
-            <li>
-              Experimental design shaped by user, clinical and ecological constraints
-            </li>
+            <li>Devices that change a care pathway need product decisions grounded in clinical reality, not only in technology</li>
+            <li>My work on assistive robotics in a medical-device context taught me to design for patients, clinicians and regulation at once</li>
+            <li>I keep contributing to assistive technology through open source and the Paris Cybathlétique Club</li>
+          </ul>
+        </section>
+      )}
+
+      {activeSection === 'extender' && (
+        <section className="section" id="extender" aria-labelledby="extender-heading">
+          <div className="section-header">
+            <h2 id="extender-heading" ref={sectionHeadingRef} tabIndex={-1}>
+              Extender &amp; Bloom — Assistive Robotics at ISIR
+            </h2>
+            <p className="section-meta">
+              ISIR · Sorbonne University / CNRS, Paris · Robotics Research Engineer
+            </p>
+          </div>
+          <div className="section-body section-blocks">
+            <div className="content-stack">
+              <p className="section-lead">
+                At ISIR, I worked on the control and software architecture of
+                assistive robotic manipulators within the{' '}
+                <a href="https://orthopus.com/explorer/" target="_blank" rel="noreferrer">
+                  Extender
+                </a>{' '}
+                project, an ANR project with Orthopus. The goal is to let
+                wheelchair users perform everyday tasks with a robotic arm
+                developed in a medical-device context and deployed in real
+                conditions. I keep contributing to the open{' '}
+                <a href={extenderOrgUrl} target="_blank" rel="noreferrer">
+                  ISIR-EXTENDER
+                </a>{' '}
+                ecosystem and to assistive technology beyond the project itself.
+              </p>
+              <p>
+                The stack has three replaceable layers: Bloom, the operator
+                interface; a command manager that sums every active input and
+                applies the selected control mode; and a QP controller that turns
+                the command into joint motion under the robot&apos;s limits. The
+                same code runs on the Orthopus Explorer arm and on a Kinova Gen3,
+                in simulation or on hardware.
+              </p>
+              <p>
+                My role combined the two sides I care about: the technical
+                foundation, and the product and coordination work that makes it
+                usable. I clarified needs, structured specifications, contributed
+                to roadmap decisions and kept the software coherent across
+                technical, clinical and user constraints.
+              </p>
+            </div>
+            <figure className="section-visual section-visual-wide">
+              <img
+                src={bloomDriveScreenshot}
+                alt="Bloom operator interface showing the Explorer Manager Drive screen with its STOP rail"
+                loading="lazy"
+              />
+              <figcaption>
+                Bloom, the Extender operator interface: the Explorer Manager Drive screen.
+              </figcaption>
+            </figure>
+          </div>
+
+          <h3>
+            <a href={bloomRepoUrl} target="_blank" rel="noreferrer">
+              Bloom
+            </a>
+            , the operator interface
+          </h3>
+          <p>
+            Bloom is the product I designed and built for Extender. It builds
+            accessible web interfaces for robots and runs them in a focused
+            kiosk: screens are composed visually in a Builder, opened as a role on
+            a tablet or desktop, and reach the robot through a policy-checked
+            backend that keeps ROS at the adapter boundary. In September 2026 it
+            replaced the previous tablet interface as the official Extender
+            operator interface, with release 0.2.0 published under the MIT
+            license.
+          </p>
+          <ul className="focus-list">
+            <li>Visual Builder and kiosk Runtime sharing one application, screen, widget, theme, profile and guardrail model</li>
+            <li>Touch, keyboard and gamepad input composed into one 6-DoF command, plus single-switch scanning profiles for assistive devices</li>
+            <li>Safety in the backend: allowlists, rate limits, one command owner per session, audit log and a latched STOP every operator can press</li>
+            <li>Explorer Manager and Kinova Manager apps: Drive, Positions, Robot feedback, Command sources, Joystick Lab and a read-only Supervisor mirror</li>
+            <li>English, Spanish and French runtime shells, a guided operator practice and a review checklist before an app is opened to a user</li>
+            <li>Continuous integration that drives both robot simulations end to end and checks each effect on the ROS graph</li>
           </ul>
 
-          <h3>Product & Interdisciplinary Coordination</h3>
+          <h3>Recent developments (2026)</h3>
           <ul className="focus-list">
-            <li>
-              Translating user and clinical needs into technical decisions
-            </li>
-            <li>
-              Technical and functional structuring: specifications, roadmap and feature coherence
-            </li>
-            <li>
-              Contribution to project roadmap and documentation across user,
-              clinical and technical levels
-            </li>
-            <li>
-              Co-design sessions and experimental studies with users
-            </li>
-            <li>
-              Coordination across researchers, engineers, clinicians and industrial partners
-            </li>
+            <li>Moved the whole workspace to Ubuntu 24.04 and ROS 2 Jazzy, and maintain the workspace entry point, build guide and shared Python environment</li>
+            <li>Built and then retired the first tablet teleoperation path (React app and WebSocket backend) once Bloom covered it</li>
+            <li>Connected Bloom to the new control architecture: control modes, rotation frames, named poses, live parameter tuning and a gripper camera stream</li>
+            <li>Drove visual servoing from Bloom and ported the AprilTag detection package to the new baseline</li>
+            <li>Rebased the Petanque assistive demonstrator (PEPR Robotics) onto the new stack through a dedicated Bloom app</li>
+            <li>Wrote the organisation profile, tutorials and contribution rules that onboard newcomers to the stack</li>
           </ul>
 
-          <h3>Medical-Device Perspective</h3>
+          <h3>Research and coordination</h3>
           <ul className="focus-list">
-            <li>Attention to clinical context, patient safety and real-world usability</li>
-            <li>Interfaces and tools designed for coherent usage across experimentation and deployment</li>
-            <li>Product thinking applied to complex technical systems rather than isolated features</li>
-            <li>Continuous feedback loops between technical development, users and field constraints</li>
+            <li>Research in shared control and assistive manipulation, with scientific writing and paper submissions (ICRA)</li>
+            <li>Co-design sessions and experimental studies shaped by user, clinical and ecological constraints</li>
+            <li>Coordination across researchers, engineers, clinicians and industrial partners</li>
+            <li>Real-time control laws and robot-agnostic software foundations in C++, Python and ROS 2</li>
           </ul>
-
         </section>
       )}
 
@@ -413,8 +475,9 @@ export function SectionContent({
               <p className="section-lead">
                 Assistive robotics and medical devices have been a long-running
                 thread in my work, from my Ph.D. on human-robot comanipulation in
-                industrial settings to my current work on robotic assistance for
-                people with disabilities in a medical-device context.
+                industrial settings to robotic assistance for people with
+                disabilities in a medical-device context, and now to product
+                ownership of medical-device software.
               </p>
               <p>
                 My doctoral research focused on helping people work with
@@ -441,7 +504,7 @@ export function SectionContent({
           <div className="section-body section-blocks">
             <div className="content-stack">
               <p>
-                Today, this vision continues in a different context through the{' '}
+                This vision continued in a different context through the{' '}
                 <a href="https://orthopus.com/explorer/" target="_blank" rel="noreferrer">
                   Extender
                 </a>{' '}
@@ -452,22 +515,24 @@ export function SectionContent({
                 user&apos;s own way of acting.
               </p>
               <p>
-                What connects the Ph.D. and the current work is the same
+                What connects the Ph.D., Extender and my product work is the same
                 engineering and product question: how to build assistance that
                 remains adaptable, understandable and useful without taking agency
                 away from the person.
               </p>
               <p>
-                The software dimension of this work is also visible in the open{' '}
-                <a href="https://github.com/ISIR-EXTENDER" target="_blank" rel="noreferrer">
+                The software dimension of this work is visible in the open{' '}
+                <a href={extenderOrgUrl} target="_blank" rel="noreferrer">
                   ISIR-EXTENDER
                 </a>{' '}
-                ecosystem: a modular ROS2 stack for teleoperation and control
-                research, with reusable robot interfaces, pluggable controllers and
-                operator tools built across C++, Python, FastAPI, React and
-                TypeScript. It reflects the kind of technical foundation I care
-                about in assistive systems: reusable, testable and connected to
-                real usage constraints.
+                ecosystem, a modular ROS 2 stack for assistive manipulation, and in{' '}
+                <a href={bloomRepoUrl} target="_blank" rel="noreferrer">
+                  Bloom
+                </a>
+                , the accessible operator interface I built for it. Both are
+                described in the Extender &amp; Bloom section. They reflect the kind
+                of technical foundation I care about in assistive systems:
+                reusable, testable and connected to real usage constraints.
               </p>
             </div>
             <figure className="section-visual">
@@ -662,16 +727,24 @@ export function SectionContent({
             and to the broader dynamics of the ROS-speaking robotics community.
           </p>
           <p>
-            On the assistive side, I am a member of the{' '}
+            On the assistive side, I am the Secretary of the{' '}
             <a
               href="https://www.helloasso.com/associations/paris-cybathletique-club"
               target="_blank"
               rel="noreferrer"
             >
-              Paris Cyberathletic Club
-            </a>
-            , an association that helps keep my work anchored in practical,
-            embodied and user-centered robotics.
+              Paris Cybathlétique Club
+            </a>{' '}
+            (PCC) and in charge of its communications, since September 2026. The
+            association gathers upper-limb prosthesis users, researchers and
+            clinicians around assistive technology and cybathletic practice. It
+            keeps my work anchored in practical, embodied and user-centered
+            assistive technology.
+          </p>
+          <p>
+            Through PCC and the open ISIR-EXTENDER ecosystem, I keep taking part
+            in the development of assistive technologies beyond my Extender
+            project contributions.
           </p>
           <p>
             I am also involved in{' '}
@@ -686,6 +759,7 @@ export function SectionContent({
           <ul className="focus-list">
             <li>Evaluating robotics and AI projects beyond novelty alone, with attention to maturity and usefulness</li>
             <li>Contributing to technical communities around open robotics tools and shared practices</li>
+            <li>Running an association&apos;s secretariat and communications, close to the people assistive technology is for</li>
             <li>Staying connected to users, associations and communities that shape assistive robotics in practice</li>
             <li>Bridging strategic, technical and human perspectives across the ecosystem</li>
           </ul>

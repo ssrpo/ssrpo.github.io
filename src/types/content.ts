@@ -6,6 +6,7 @@ export type SectionId =
   | 'user-centered'
   | 'in-between'
   | 'current'
+  | 'extender'
   | 'industrial-robotics'
   | 'assistive-robotics'
   | 'ecosystem'
@@ -20,6 +21,7 @@ export const sectionLabels: Record<SectionId, string> = {
   'user-centered': 'User-Centered Development',
   'in-between': 'In the In-Between',
   current: 'Current Role',
+  extender: 'Extender & Bloom',
   'industrial-robotics': 'Industrial Robotics',
   'assistive-robotics': 'Assistive & Medical Devices',
   ecosystem: 'Engagements',
@@ -35,6 +37,7 @@ export const sectionPanelIds: Record<SectionId, string> = {
   'user-centered': 'user-centered',
   'in-between': 'in-between',
   current: 'current-work',
+  extender: 'extender',
   'industrial-robotics': 'industrial-robotics',
   'assistive-robotics': 'assistive-robotics',
   ecosystem: 'ecosystem',

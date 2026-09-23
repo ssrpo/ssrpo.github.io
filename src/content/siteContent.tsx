@@ -1,5 +1,11 @@
+import explorerImage from '../assets/explorer.png'
 import guidanceImage from '../assets/guidance.jpg'
 import type { PublicationGroup, SocialLink } from '../types/content'
+
+export const bloomRepoUrl = 'https://github.com/ISIR-EXTENDER/bloom'
+export const extenderOrgUrl = 'https://github.com/ISIR-EXTENDER'
+export const bloomDriveScreenshot =
+  'https://raw.githubusercontent.com/ISIR-EXTENDER/bloom/main/docs/assets/screenshots/runtime-explorer-drive.png'
 
 export const socialLinks: SocialLink[] = [
   {
@@ -41,6 +47,26 @@ export const socialLinks: SocialLink[] = [
 ]
 
 export const getPublicationGroups = (baseUrl: string): PublicationGroup[] => [
+  {
+    title: 'Software & Open Source',
+    description: 'Open robotics software I build and maintain.',
+    items: [
+      {
+        title: 'Bloom — accessible operator interfaces for robots',
+        meta: 'Open source · React, FastAPI, ROS 2 · MIT · 2026',
+        label: 'Repository',
+        image: bloomDriveScreenshot,
+        href: bloomRepoUrl,
+      },
+      {
+        title: 'ISIR-EXTENDER organisation',
+        meta: 'Open ROS 2 stack for assistive manipulation · Maintainer',
+        label: 'GitHub',
+        image: explorerImage,
+        href: extenderOrgUrl,
+      },
+    ],
+  },
   {
     title: 'Thesis & Academic',
     description: 'Foundational academic work.',

@@ -561,6 +561,10 @@
   display: block;
 }
 
+.section-visual.section-visual-wide img {
+  max-width: 100%;
+}
+
 .section-visual-pair {
   display: flex;
   flex-wrap: wrap;

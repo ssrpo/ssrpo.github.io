@@ -103,6 +103,15 @@ export function Sidebar({ activeSection, setActiveSection }: SidebarProps) {
             </button>
             <button
               type="button"
+              className={`nav-link ${activeSection === 'extender' ? 'active' : ''}`}
+              onClick={() => setActiveSection('extender')}
+              aria-current={activeSection === 'extender' ? 'true' : undefined}
+              aria-controls={activeSection === 'extender' ? sectionPanelIds.extender : undefined}
+            >
+              Extender & Bloom
+            </button>
+            <button
+              type="button"
               className={`nav-link ${activeSection === 'assistive-robotics' ? 'active' : ''}`}
               onClick={() => setActiveSection('assistive-robotics')}
               aria-current={activeSection === 'assistive-robotics' ? 'true' : undefined}
