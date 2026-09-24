@@ -6,12 +6,12 @@ export type SectionId =
   | 'user-centered'
   | 'in-between'
   | 'current'
-  | 'industrial-robotics'
+  | 'extender'
   | 'assistive-robotics'
+  | 'engineering'
   | 'ecosystem'
   | 'cercle'
   | 'publications'
-  | 'social-robotics'
   | 'interests'
 
 export const sectionLabels: Record<SectionId, string> = {
@@ -20,12 +20,12 @@ export const sectionLabels: Record<SectionId, string> = {
   'user-centered': 'User-Centered Development',
   'in-between': 'In the In-Between',
   current: 'Current Role',
-  'industrial-robotics': 'Industrial Robotics',
+  extender: 'Bloom Case Study',
   'assistive-robotics': 'Assistive & Medical Devices',
+  engineering: 'Robotics Engineering',
   ecosystem: 'Engagements',
   cercle: 'Le Cercle des Robots Disparus',
-  publications: 'Publications',
-  'social-robotics': 'Human-Robot Interaction',
+  publications: 'Work & Writing',
   interests: 'Interests',
 }
 
@@ -35,14 +35,38 @@ export const sectionPanelIds: Record<SectionId, string> = {
   'user-centered': 'user-centered',
   'in-between': 'in-between',
   current: 'current-work',
-  'industrial-robotics': 'industrial-robotics',
+  extender: 'extender',
   'assistive-robotics': 'assistive-robotics',
+  engineering: 'engineering',
   ecosystem: 'ecosystem',
   cercle: 'cercle',
   publications: 'publications',
-  'social-robotics': 'social-robotics',
   interests: 'interests',
 }
+
+export type NavGroup = {
+  label: string
+  sections: SectionId[]
+}
+
+export const navGroups: NavGroup[] = [
+  {
+    label: 'Profile',
+    sections: ['about', 'recommendations', 'user-centered', 'publications'],
+  },
+  {
+    label: 'Product & medtech',
+    sections: ['current', 'extender', 'assistive-robotics'],
+  },
+  {
+    label: 'Engineering background',
+    sections: ['engineering'],
+  },
+  {
+    label: 'Community',
+    sections: ['ecosystem', 'cercle', 'interests'],
+  },
+]
 
 export type SocialLink = {
   label: string
