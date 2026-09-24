@@ -2,7 +2,10 @@
   "ci": {
     "collect": {
       "staticDistDir": "./dist",
-      "numberOfRuns": 2
+      "numberOfRuns": 2,
+      "settings": {
+        "chromeFlags": "--no-sandbox --headless=new"
+      }
     },
     "assert": {
       "assertions": {
