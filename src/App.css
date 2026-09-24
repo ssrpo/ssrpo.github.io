@@ -923,3 +923,24 @@
 .about-details {
   margin-top: var(--space-6);
 }
+
+.pull-quote {
+  margin: var(--space-6) 0 0;
+  padding: var(--space-2) 0 var(--space-2) var(--space-5);
+  border-left: 3px solid var(--accent-fuchsia);
+  max-width: 720px;
+}
+
+.pull-quote p {
+  margin: 0;
+  font-size: var(--font-size-body-lg);
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.pull-quote footer {
+  margin-top: var(--space-2);
+  font-size: var(--font-size-label);
+  letter-spacing: 0.01em;
+  color: var(--text-muted);
+}

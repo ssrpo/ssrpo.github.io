@@ -89,6 +89,14 @@ export function SectionContent({
                 </li>
               ))}
             </ul>
+            <blockquote className="pull-quote">
+              <p>
+                “Susana a un vrai mindset produit ! Elle ne reste pas cantonnée à
+                la technique, elle cherche à comprendre les enjeux business et les
+                besoins utilisateur.”
+              </p>
+              <footer>Yasmine Khansari · Lead UX, SoftBank Robotics Europe</footer>
+            </blockquote>
             <div className="content-stack about-details">
               <p>
                 Concretely, my work has covered product framing and roadmaps,
@@ -132,15 +140,32 @@ export function SectionContent({
               What They Say
             </h2>
             <p className="section-lead">
-              Selected words from collaborators across product, research and
-              industrial environments. What they describe is the pattern I try to
-              bring to every product: judgement about what to build and when,
-              technical depth, clarity for the people around the table, and care
-              for the people on the other side of the interface.
+              Selected words from product leaders, designers, engineers and
+              partners I have worked with. What they describe is the pattern I
+              try to bring to every product: judgement about what to build and
+              when, technical depth, clarity for the people around the table, and
+              care for the people on the other side of the interface.
             </p>
           </div>
           <div className="section-body">
             <div className="quote-grid card-stack">
+              <article className="quote-card">
+                <p className="quote-text">
+                  “Susana a un vrai mindset produit ! Elle ne reste pas cantonnée
+                  à la technique, elle cherche à comprendre les enjeux business et
+                  les besoins utilisateur. Elle pose les bonnes questions,
+                  challenge et creuse les sujets en profondeur.”
+                </p>
+                <p className="quote-meta">Yasmine Khansari · Lead UX, SoftBank Robotics Europe</p>
+              </article>
+              <article className="quote-card">
+                <p className="quote-text">
+                  “Son appétence pour les méthodologies de co-construction et
+                  l'importance d'une posture user centric… et sa capacité socle à
+                  cadrer et produire des solutions viables.”
+                </p>
+                <p className="quote-meta">Alexandre Joubert · CPO &amp; Head of Product</p>
+              </article>
               <article className="quote-card">
                 <p className="quote-text">
                   “I would describe Susana as a software engineer with a strong
