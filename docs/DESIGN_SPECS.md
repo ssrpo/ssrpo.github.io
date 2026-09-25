@@ -35,13 +35,13 @@ Ten sections in four groups. Every section exists in English, French and Spanish
 ## Page anatomy
 
 ```
-┌───────────── sidebar (sticky) ─────────────┐┌──────── main ────────┐
+┌───────────── sidebar ──────────────────────┐┌──────── main ────────┐
 │ positioning kicker                         ││ kicker               │
 │ Susana / Sánchez Restrepo   (display)      ││ h1 section title     │
 │ pitch with marker highlight                ││ meta                 │
 │ ● Now: role                                ││ In short             │
 │ [Sections ▾]        (mobile only)          ││ blocks…              │
-│ nav: 4 groups × numbered links             ││ collapsibles         │
+│ nav: 4 groups × numbered links  (sticky)   ││ collapsibles         │
 │ [Let's talk on LinkedIn ↗] ✉ 🎓 GH IG      ││ ← previous  next →   │
 │ Download CV ↓                              │└──────────────────────┘
 │ (Auto|Light|Dark)  (EN|FR|ES)              │

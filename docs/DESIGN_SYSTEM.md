@@ -94,7 +94,8 @@ Rules:
 
 | Breakpoint | Rules |
 | --- | --- |
-| ≥ 1024 | Page max 1440, padding 56 / 48 / 96 / 72. Sticky sidebar `clamp(320px, 30vw, 420px)`. Gap `clamp(56px, 8vw, 128px)`. Content max 780. |
+| ≥ 1024 | Page max 1440, padding 56 / 48 / 96 / 72. Sidebar `clamp(320px, 30vw, 420px)`. Gap `clamp(56px, 8vw, 128px)`. Content max 780. |
+| ≥ 768 wide and ≥ 650 tall | The sidebar scrolls with the page and never scrolls on its own. Only the section list is sticky, 24 px from the top, and it is pinned only when all of it fits on screen. The contact buttons, CV and switches sit at the foot of the sidebar, level with the pager. |
 | ≤ 1100 | Label rows and timeline stack (term above text). |
 | 768–1023 | Sidebar `clamp(280px, 36vw, 380px)`, gap 48. Two-column grids (quotes, cards, families, screenshot pairs) collapse to one. |
 | < 768 | Single column, sidebar unstuck, page padding 20. The section list collapses behind a "Sections" button that shows the current section. Publication thumbnails go 16:9. Pager stacks. |

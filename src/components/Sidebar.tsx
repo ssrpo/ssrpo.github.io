@@ -51,27 +51,29 @@ export function Sidebar({ c, lang, activeId, menuOpen, theme, onToggleMenu, onNa
         </span>
       </button>
 
-      <nav id="sections-nav" className="nav" data-open={menuOpen} aria-label={ui.menu}>
-        {GROUP_ORDER.map((g) => (
-          <div className="nav-group" key={g}>
-            <div className="nav-label">{c.groups[g]}</div>
-            {c.sections.map((s, i) =>
-              s.group !== g ? null : (
-                <a
-                  key={s.id}
-                  href={pathFor(lang, s.id)}
-                  className="nav-item"
-                  aria-current={s.id === activeId ? 'page' : undefined}
-                  onClick={(e) => onNavigate(e, pathFor(lang, s.id))}
-                >
-                  <span className="nav-num" aria-hidden="true">{num(i)}</span>
-                  {s.nav}
-                </a>
-              ),
-            )}
-          </div>
-        ))}
-      </nav>
+      <div className="nav-wrap">
+        <nav id="sections-nav" className="nav" data-open={menuOpen} aria-label={ui.menu}>
+          {GROUP_ORDER.map((g) => (
+            <div className="nav-group" key={g}>
+              <div className="nav-label">{c.groups[g]}</div>
+              {c.sections.map((s, i) =>
+                s.group !== g ? null : (
+                  <a
+                    key={s.id}
+                    href={pathFor(lang, s.id)}
+                    className="nav-item"
+                    aria-current={s.id === activeId ? 'page' : undefined}
+                    onClick={(e) => onNavigate(e, pathFor(lang, s.id))}
+                  >
+                    <span className="nav-num" aria-hidden="true">{num(i)}</span>
+                    {s.nav}
+                  </a>
+                ),
+              )}
+            </div>
+          ))}
+        </nav>
+      </div>
 
       <div className="contact" role="group" aria-label={ui.elsewhere}>
         <a className="cta" href={PERSON_LINKS.linkedin} target="_blank" rel="noreferrer">
