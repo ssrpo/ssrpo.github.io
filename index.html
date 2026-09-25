@@ -2,40 +2,27 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/heart.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Susana Sanchez Restrepo, Senior Product Owner Software at Echosens, designs complex interactive systems across medtech, robotics and assistive technology."
+    <meta name="color-scheme" content="light dark" />
+    <meta name="author" content="Susana Sánchez Restrepo" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Source+Sans+3:wght@400;600&display=swap"
     />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Susana Sanchez Restrepo | Product Leadership in Medtech & Robotics"
-    />
-    <meta
-      property="og:description"
-      content="Senior Product Owner Software at Echosens. Product leadership for medical devices and assistive robotics, with the Bloom case study, writing and community work."
-    />
-    <meta property="og:image" content="/explorer.png" />
-    <meta property="og:image:alt" content="Explorer assistive robotic arm" />
-    <meta
-      name="twitter:card"
-      content="summary_large_image"
-    />
-    <meta
-      name="twitter:title"
-      content="Susana Sanchez Restrepo | Product Leadership in Medtech & Robotics"
-    />
-    <meta
-      name="twitter:description"
-      content="Senior Product Owner Software at Echosens. Product leadership for medical devices and assistive robotics, with the Bloom case study, writing and community work."
-    />
-    <meta name="twitter:image" content="/explorer.png" />
-    <title>Susana Sanchez Restrepo | Product Leadership in Medtech & Robotics</title>
+    <script>
+      try {
+        var t = localStorage.getItem('suziesr-theme-pref')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+    <!--head-->
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--app--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

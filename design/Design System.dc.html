@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;-webkit-font-smoothing:antialiased}
+[data-shell]{--bg:#FBF8F5;--surface:#FFFFFF;--surface-2:#F4EEE9;--ink:#2B2529;--ink-2:#5F565B;--line:rgba(43,37,41,0.13);--pink:#C42A78;--on-pink:#FFFFFF;--pink-soft:#FBE4EF;--yellow:#F6D46B;--yellow-soft:#FCEFC4;--on-yellow:#2B2529;--marker:#FBE39A;color-scheme:light}
+[data-shell][data-theme="dark"]{--bg:#111014;--surface:#1A181F;--surface-2:#221F28;--ink:#ECE7EA;--ink-2:#B3ACB2;--line:rgba(236,231,234,0.13);--pink:#EE72B0;--on-pink:#1A1618;--pink-soft:#3A1C2C;--yellow:#E7C96A;--yellow-soft:#3A3322;--on-yellow:#1A1618;--marker:rgba(231,201,106,0.32);color-scheme:dark}
+a{color:var(--ink);text-decoration-color:var(--pink)}a:hover{color:var(--pink)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--pink);outline-offset:3px;border-radius:6px}
+summary::-webkit-details-marker{display:none}
+details[open]>summary [data-chev]{transform:rotate(180deg)}
+@media (max-width:760px){[data-page]{padding:32px 20px 64px!important}[data-row]{grid-template-columns:minmax(0,1fr)!important;gap:4px!important}}
+</style>
+</helmet>
+<div data-shell data-theme="{{ theme }}" style="min-height:100vh;background:var(--bg);color:var(--ink);font-family:'Source Sans 3','Segoe UI',system-ui,sans-serif;font-size:18px;line-height:1.6;transition:background 0.25s ease,color 0.25s ease">
+<div data-page style="max-width:1120px;margin:0 auto;padding:56px 48px 120px;display:grid;gap:80px">
+
+  <header style="display:grid;gap:20px;padding-bottom:40px;border-bottom:1px solid var(--line)">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+      <p style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--pink)">suziesr.xyz · Design system v1</p>
+      <div role="group" aria-label="Preview theme" style="display:inline-flex;padding:4px;border-radius:999px;border:1px solid var(--line);background:var(--surface);gap:2px">
+        <sc-for list="{{ themeOptions }}" as="opt" hint-placeholder-count="2">
+          <button type="button" aria-pressed="{{ opt.pressed }}" onClick="{{ opt.select }}" style="min-height:40px;padding:0 16px;border-radius:999px;border:0;background:{{ opt.bg }};color:{{ opt.fg }};font-family:inherit;font-size:14px;font-weight:600;cursor:pointer">{{ opt.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <h1 style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:clamp(44px,5vw,64px);line-height:1;font-weight:400;letter-spacing:-0.02em">Paper, ink, pink &amp; a little yellow</h1>
+    <p style="margin:0;font-size:21px;line-height:1.5;max-width:40em;text-wrap:pretty">The rules behind Susana Sánchez Restrepo's portfolio: the same sidebar-and-sections site, systematised so every size, space and colour has one reason to exist. Accessible first — WCAG 2.2 AA is the floor, not the goal.</p>
+  </header>
+
+  <section aria-labelledby="ds-principles" style="display:grid;gap:24px">
+    <h2 id="ds-principles" style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:40px;line-height:1.1;font-weight:400">1 · Principles</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+      <div style="padding:22px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:8px"><span style="font-family:'Newsreader',Georgia,serif;font-size:28px;color:var(--pink);line-height:1">01</span><span style="font-weight:600">Quiet by default</span><span style="font-size:16px;color:var(--ink-2);line-height:1.55">Ink on warm paper does the work. Colour marks meaning — it never decorates.</span></div>
+      <div style="padding:22px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:8px"><span style="font-family:'Newsreader',Georgia,serif;font-size:28px;color:var(--pink);line-height:1">02</span><span style="font-weight:600">Summary first</span><span style="font-size:16px;color:var(--ink-2);line-height:1.55">Every section opens with an "In short" a recruiter can read in ten seconds. Depth lives in collapsibles.</span></div>
+      <div style="padding:22px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:8px"><span style="font-family:'Newsreader',Georgia,serif;font-size:28px;color:var(--pink);line-height:1">03</span><span style="font-weight:600">One token per job</span><span style="font-size:16px;color:var(--ink-2);line-height:1.55">No near-duplicate sizes or spaces. If a value isn't in this file, it doesn't ship.</span></div>
+      <div style="padding:22px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:8px"><span style="font-family:'Newsreader',Georgia,serif;font-size:28px;color:var(--pink);line-height:1">04</span><span style="font-weight:600">Accessible is the style</span><span style="font-size:16px;color:var(--ink-2);line-height:1.55">Large body text, 44px targets, visible focus, real headings — the same values Bloom holds itself to.</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ds-color" style="display:grid;gap:24px">
+    <h2 id="ds-color" style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:40px;line-height:1.1;font-weight:400">2 · Colour</h2>
+    <p style="margin:0;font-size:18px;line-height:1.65;color:var(--ink-2);max-width:66ch">Contrast is deliberately softer than pure black on white (≈14:1 instead of 21:1) — calmer to read, still far above AA. Ratios below are measured against <code>--bg</code> of each theme.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px">
+      <sc-for list="{{ swatches }}" as="s" hint-placeholder-count="10">
+        <div style="border-radius:14px;border:1px solid var(--line);overflow:hidden;background:var(--surface)">
+          <div style="height:88px;background:{{ s.css }};border-bottom:1px solid var(--line)"></div>
+          <div style="padding:12px 14px;display:grid;gap:2px">
+            <code style="font-size:14px;font-weight:600;color:var(--ink)">{{ s.token }}</code>
+            <span style="font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums">Light {{ s.light }} · Dark {{ s.dark }}</span>
+            <span style="font-size:14px;color:var(--ink-2);line-height:1.4">{{ s.use }}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <dl style="margin:0;display:grid">
+      <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line)"><dt style="font-weight:600;font-size:16px">--ink on --bg</dt><dd style="margin:0;font-size:17px;color:var(--ink-2)">14.2:1 light · 15.5:1 dark — headings, lead text, labels in rows</dd></div>
+      <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line)"><dt style="font-weight:600;font-size:16px">--ink-2 on --bg</dt><dd style="margin:0;font-size:17px;color:var(--ink-2)">6.7:1 light · 8.5:1 dark — body copy, captions, metadata</dd></div>
+      <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><dt style="font-weight:600;font-size:16px">--pink on --bg</dt><dd style="margin:0;font-size:17px;color:var(--ink-2)">7.2:1 light · 6.9:1 dark — safe for text: kickers, numbers, link underlines, focus ring</dd></div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="ds-yellow" style="display:grid;gap:24px">
+    <h2 id="ds-yellow" style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:40px;line-height:1.1;font-weight:400">3 · The yellow rule</h2>
+    <p style="margin:0;font-size:18px;line-height:1.65;color:var(--ink-2);max-width:66ch">Yellow appears in exactly three places, each answering a question a visitor has. It is always a <strong style="color:var(--ink)">background under ink</strong>, never text on paper (yellow text fails contrast in light mode).</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px">
+      <div style="padding:24px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:14px;align-content:start">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2)">1 · What do you do? Marker</span>
+        <p style="margin:0;font-size:19px;line-height:1.55">I turn complex systems into <mark style="background:linear-gradient(transparent 55%,var(--marker) 55%);color:inherit;padding:0 2px">products people can trust.</mark></p>
+        <span style="font-size:15px;color:var(--ink-2)">One phrase per page: the positioning line. <code>--marker</code>, bottom 45%.</span>
+      </div>
+      <div style="padding:24px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:14px;align-content:start">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2)">2 · Where are you now? Status dot</span>
+        <p style="display:flex;align-items:flex-start;gap:10px;margin:0;font-size:15px;color:var(--ink-2)"><span style="width:8px;height:8px;margin-top:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 3px var(--yellow-soft);flex:0 0 auto"></span><span><span style="font-weight:600;color:var(--ink)">From October 2026:</span> Senior PO Software, Echosens</span></p>
+        <span style="font-size:15px;color:var(--ink-2)">Current role only, as a quiet line. The 8px dot uses <code>--yellow</code> with a <code>--yellow-soft</code> halo.</span>
+      </div>
+      <div style="padding:24px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:14px;align-content:start">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2)">3 · Where am I? Active nav</span>
+        <div style="display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;min-height:44px;padding:0 12px;border-radius:8px;background:var(--yellow-soft);font-size:17px;font-weight:600"><span style="font-size:13px;color:var(--ink-2)">06</span>Bloom Case Study</div>
+        <span style="font-size:15px;color:var(--ink-2)">Plus <code>aria-current="page"</code> — colour is never the only signal.</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ds-type" style="display:grid;gap:24px">
+    <h2 id="ds-type" style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:40px;line-height:1.1;font-weight:400">4 · Typography</h2>
+    <p style="margin:0;font-size:18px;line-height:1.65;color:var(--ink-2);max-width:66ch"><strong style="color:var(--ink)">Newsreader</strong> (display and headings, weight 400 only — a lower-contrast serif than a Didone, easier on the eye) and <strong style="color:var(--ink)">Source Sans 3</strong> (everything else, 400 / 600). Eight sizes, down from the fourteen on the current site.</p>
+    <div style="display:grid">
+      <sc-for list="{{ typeScale }}" as="t" hint-placeholder-count="8">
+        <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line)">
+          <div style="display:grid;gap:2px"><code style="font-size:14px;font-weight:600">{{ t.token }}</code><span style="font-size:13px;color:var(--ink-2)">{{ t.spec }}</span></div>
+          <span style="font-family:{{ t.family }};font-size:{{ t.size }};line-height:{{ t.lh }};font-weight:{{ t.weight }};letter-spacing:{{ t.ls }};text-transform:{{ t.tt }};color:{{ t.color }}">{{ t.sample }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <ul style="margin:0;padding-left:20px;display:grid;gap:8px;font-size:17px;color:var(--ink-2);max-width:66ch">
+      <li>Body line length capped at 68ch; <code>text-wrap: pretty</code> on all paragraphs.</li>
+      <li>Italic serif is reserved for quotations.</li>
+      <li>Uppercase only for kickers and group labels (≤ 4 words), always tracked +0.08em.</li>
+      <li>Sentence case for every heading — no Title Case.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="ds-space" style="display:grid;gap:24px">
+    <h2 id="ds-space" style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:40px;line-height:1.1;font-weight:400">5 · Space, shape, layout</h2>
+    <div style="display:grid;gap:10px">
+      <sc-for list="{{ spaces }}" as="s" hint-placeholder-count="9">
+        <div style="display:grid;grid-template-columns:90px 60px minmax(0,1fr);gap:16px;align-items:center">
+          <code style="font-size:14px;font-weight:600">{{ s.token }}</code>
+          <span style="font-size:14px;color:var(--ink-2);font-variant-numeric:tabular-nums">{{ s.px }}px</span>
+          <div style="display:flex;align-items:center;gap:16px;min-width:0"><span style="height:14px;width:{{ s.w }};background:var(--pink);border-radius:3px;flex:0 0 auto"></span><span style="font-size:15px;color:var(--ink-2)">{{ s.use }}</span></div>
+        </div>
+      </sc-for>
+    </div>
+    <dl style="margin:0;display:grid">
+      <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line)"><dt style="font-weight:600;font-size:16px">Radius</dt><dd style="margin:0;font-size:17px;color:var(--ink-2)">8 controls & nav · 10 badges & icon buttons · 14 cards, figures, summary box · 999 pills & CTA</dd></div>
+      <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line)"><dt style="font-weight:600;font-size:16px">Lines</dt><dd style="margin:0;font-size:17px;color:var(--ink-2)">1px <code>--line</code> only. No shadows, no gradients, no coloured left borders.</dd></div>
+      <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line)"><dt style="font-weight:600;font-size:16px">Desktop ≥ 1024</dt><dd style="margin:0;font-size:17px;color:var(--ink-2)">Max 1440 · sticky sidebar clamp(320, 30vw, 420) · gap clamp(56, 8vw, 128) · content max 780</dd></div>
+      <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line)"><dt style="font-weight:600;font-size:16px">Tablet 768–1023</dt><dd style="margin:0;font-size:17px;color:var(--ink-2)">Sidebar clamp(280, 36vw, 380) · gap 48 · two-column grids collapse to one</dd></div>
+      <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><dt style="font-weight:600;font-size:16px">Mobile &lt; 768</dt><dd style="margin:0;font-size:17px;color:var(--ink-2)">Single column, sidebar unstuck, page padding 20 · label rows stack · card images go 16:9</dd></div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="ds-components" style="display:grid;gap:32px">
+    <h2 id="ds-components" style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:40px;line-height:1.1;font-weight:400">6 · Components</h2>
+
+    <div style="display:grid;gap:14px">
+      <h3 style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">Section anatomy</h3>
+      <div style="padding:28px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:20px">
+        <div style="display:grid;gap:10px">
+          <p style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--pink)">06 · Product &amp; medtech</p>
+          <h4 style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:40px;line-height:1.08;font-weight:400;letter-spacing:-0.015em">Section title</h4>
+          <p style="margin:0;font-size:15px;color:var(--ink-2)">Optional meta · place · date</p>
+        </div>
+        <div style="display:grid;gap:8px;padding:20px 24px;border-radius:14px;background:var(--surface-2)"><span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2)">In short</span><p style="margin:0;font-size:18px;line-height:1.6">Two or three sentences, max 60 words. Answers "why should I care?"</p></div>
+        <ol style="margin:0;padding-left:20px;font-size:16px;color:var(--ink-2);display:grid;gap:4px"><li>Kicker — number · group (pink, uppercase)</li><li>H2 — Newsreader 40, focused on section change</li><li>In short — required on every section except 01</li><li>Content — label rows, cards, figures</li><li>Collapsibles — depth, closed by default</li></ol>
+      </div>
+    </div>
+
+    <div style="display:grid;gap:14px">
+      <h3 style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">Navigation item</h3>
+      <div style="padding:20px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:2px;max-width:380px">
+        <div style="display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;min-height:44px;padding:0 12px;border-radius:8px;color:var(--ink-2);font-size:17px"><span style="font-size:13px">05</span>Default</div>
+        <div style="display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;min-height:44px;padding:0 12px;border-radius:8px;background:var(--surface-2);color:var(--ink);font-size:17px"><span style="font-size:13px;color:var(--ink-2)">06</span>Hover</div>
+        <div style="display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;min-height:44px;padding:0 12px;border-radius:8px;background:var(--yellow-soft);color:var(--ink);font-size:17px;font-weight:600"><span style="font-size:13px;color:var(--ink-2)">07</span>Current (aria-current)</div>
+        <div style="display:grid;grid-template-columns:32px minmax(0,1fr);align-items:center;min-height:44px;padding:0 12px;border-radius:8px;color:var(--ink-2);font-size:17px;outline:3px solid var(--pink);outline-offset:-3px"><span style="font-size:13px">08</span>Keyboard focus</div>
+      </div>
+    </div>
+
+    <div style="display:grid;gap:14px">
+      <h3 style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">Actions &amp; links</h3>
+      <div style="padding:24px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:flex;flex-wrap:wrap;gap:20px;align-items:center">
+        <a href="https://www.linkedin.com/in/susanasanchezr/" target="_blank" rel="noreferrer" style="display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 20px;border-radius:999px;background:var(--pink);color:var(--on-pink);font-weight:600;font-size:16px;text-decoration:none">Primary CTA ↗</a>
+        <a href="#ds-components" style="font-size:18px;text-decoration-thickness:2px;text-underline-offset:3px">Inline link</a>
+        <span style="width:48px;height:48px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;border:1px solid var(--line);background:var(--surface);font-size:13px;font-weight:600">icon</span>
+        <span style="font-size:15px;color:var(--ink-2);flex:1 1 240px">One primary CTA on the whole site (LinkedIn), placed at the bottom of the sidebar with the email, Scholar, GitHub and Instagram icons, then a plain "Download CV" link. Links: ink text and a 2px pink underline, pink on hover. Icon buttons are 48×48 with an <code>aria-label</code>.</span>
+      </div>
+    </div>
+
+    <div style="display:grid;gap:14px">
+      <h3 style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">Label rows — replaces bullet lists</h3>
+      <dl style="margin:0;padding:8px 24px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid">
+        <div data-row style="display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:24px;padding:14px 0"><dt style="font-size:16px;font-weight:600">Term</dt><dd style="margin:0;font-size:17px;line-height:1.55;color:var(--ink-2)">One sentence. The term is a noun of 1–3 words that lets a skimmer read the left column alone.</dd></div>
+        <div data-row style="display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line)"><dt style="font-size:16px;font-weight:600">Limit</dt><dd style="margin:0;font-size:17px;line-height:1.55;color:var(--ink-2)">3–6 rows. More than 6 means the content wants a collapsible or cutting.</dd></div>
+      </dl>
+    </div>
+
+    <div style="display:grid;gap:14px">
+      <h3 style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">Collapsible subsection</h3>
+      <div style="padding:0 24px;border-radius:14px;border:1px solid var(--line);background:var(--surface)">
+        <details open="{{ true }}">
+          <summary style="display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:12px 0;cursor:pointer;list-style:none"><span style="display:grid;gap:2px"><span style="font-family:'Newsreader',Georgia,serif;font-size:24px;line-height:1.25">Title in Newsreader 24</span><span style="font-size:15px;color:var(--ink-2)">A one-line teaser so the closed state still informs</span></span><span data-chev aria-hidden="true" style="flex:0 0 auto;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform 0.2s ease"><svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2"><path d="m6 9 6 6 6-6"></path></svg></span></summary>
+          <p style="margin:0;padding:4px 0 24px;font-size:17px;color:var(--ink-2)">Native <code>&lt;details&gt;/&lt;summary&gt;</code>: keyboard and screen-reader support for free, content findable with Ctrl+F. Closed by default; stacked with 1px rules, no gaps.</p>
+        </details>
+      </div>
+    </div>
+
+    <div style="display:grid;gap:14px">
+      <h3 style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">Figures, cards &amp; quotes</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+        <div style="display:grid;gap:6px;align-content:start;padding:18px;border-radius:14px;border:1px solid var(--line);background:var(--surface)"><span style="font-family:'Newsreader',Georgia,serif;font-size:36px;line-height:1;color:var(--pink)">7</span><span style="font-size:15px;color:var(--ink-2)">Impact figure — max 4, a real number with a one-line source.</span></div>
+        <div style="display:grid;grid-template-columns:40px minmax(0,1fr);gap:8px 12px;padding:20px;border-radius:14px;border:1px solid var(--line);background:var(--surface)"><span style="font-family:'Newsreader',Georgia,serif;font-size:28px;line-height:1;color:var(--pink)">01</span><div style="display:grid;gap:6px"><span style="font-size:17px;font-weight:600">Decision card</span><span style="font-size:16px;color:var(--ink-2)">Case studies only. Decision as title, the "why" in one line.</span></div></div>
+        <figure style="margin:0;padding:20px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:10px"><blockquote style="margin:0;font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:20px;line-height:1.45">“Quotes in italic serif, original language kept.”</blockquote><figcaption style="font-size:15px;color:var(--ink-2)"><span style="font-weight:600;color:var(--ink)">Name</span> · Role, Company</figcaption></figure>
+      </div>
+    </div>
+    <div style="display:grid;gap:14px">
+      <h3 style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">Career timeline</h3>
+      <ol style="list-style:none;margin:0;padding:0 24px;border-radius:14px;border:1px solid var(--line);background:var(--surface)">
+        <li data-row style="display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:24px;padding:20px 0"><span style="font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--pink)">2021–2022</span><div style="display:grid;gap:6px"><span style="font-family:'Newsreader',Georgia,serif;font-size:25px;line-height:1.2">Organisation (linked)</span><span style="font-size:15px;color:var(--ink-2)">Role</span><span style="font-size:17px;color:var(--ink-2)">What I did, in two or three sentences. Up to three bullets for outcomes, and optional images in a 4:3 pair.</span></div></li>
+      </ol>
+      <p style="margin:0;font-size:15px;color:var(--ink-2)">Newest first. Years in pink tabular figures. The year column stacks above the text below 1100px.</p>
+    </div>
+
+    <div style="display:grid;gap:14px">
+      <h3 style="margin:0;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">Theme, language and pager</h3>
+      <div style="padding:24px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:20px">
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <div style="display:inline-flex;padding:4px;border-radius:999px;border:1px solid var(--line);gap:2px"><span style="min-height:40px;padding:0 12px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:14px;font-weight:600;display:inline-flex;align-items:center">Auto</span><span style="min-height:40px;padding:0 12px;font-size:14px;font-weight:600;color:var(--ink-2);display:inline-flex;align-items:center">Light</span><span style="min-height:40px;padding:0 12px;font-size:14px;font-weight:600;color:var(--ink-2);display:inline-flex;align-items:center">Dark</span></div>
+          <div style="display:inline-flex;padding:4px;border-radius:999px;border:1px solid var(--line);gap:2px"><span style="min-height:40px;padding:0 12px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:14px;font-weight:600;display:inline-flex;align-items:center">EN</span><span style="min-height:40px;padding:0 12px;font-size:14px;font-weight:600;color:var(--ink-2);display:inline-flex;align-items:center">FR</span><span style="min-height:40px;padding:0 12px;font-size:14px;font-weight:600;color:var(--ink-2);display:inline-flex;align-items:center">ES</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px"><div style="display:grid;gap:4px;padding:18px 20px;border-radius:14px;border:1px solid var(--line)"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">← Previous</span><span style="font-family:'Newsreader',Georgia,serif;font-size:21px">Current role</span></div><div style="display:grid;gap:4px;padding:18px 20px;border-radius:14px;border:1px solid var(--line);text-align:right"><span style="font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-2)">Next →</span><span style="font-family:'Newsreader',Georgia,serif;font-size:21px">Extender consortium</span></div></div>
+        <p style="margin:0;font-size:15px;color:var(--ink-2)">Segmented pills with <code>aria-pressed</code>; each language button carries its own <code>lang</code> and full name as <code>aria-label</code>. Languages: English, French, Spanish (Colombia, formal "usted"). Quotes stay in their original language. On mobile the section list collapses behind a "Sections" button that shows the current section.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ds-a11y" style="display:grid;gap:24px">
+    <h2 id="ds-a11y" style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:40px;line-height:1.1;font-weight:400">7 · Accessibility specs</h2>
+    <dl style="margin:0;display:grid">
+      <sc-for list="{{ a11y }}" as="r" hint-placeholder-count="10">
+        <div data-row style="display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:24px;padding:14px 0;border-top:1px solid var(--line)"><dt style="font-weight:600;font-size:16px">{{ r.term }}</dt><dd style="margin:0;font-size:17px;line-height:1.55;color:var(--ink-2)">{{ r.text }}</dd></div>
+      </sc-for>
+    </dl>
+  </section>
+
+  <section aria-labelledby="ds-voice" style="display:grid;gap:24px">
+    <h2 id="ds-voice" style="margin:0;font-family:'Newsreader',Georgia,serif;font-size:40px;line-height:1.1;font-weight:400">8 · Writing rules</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px">
+      <div style="padding:22px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:10px;align-content:start"><span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink)">Do</span><ul style="margin:0;padding-left:18px;display:grid;gap:6px;font-size:16px;color:var(--ink-2)"><li>First person, active voice, concrete verbs: built, shipped, led.</li><li>Real numbers with their context.</li><li>Lead each section with the outcome, then the how.</li><li>Keep French quotes in French.</li></ul></div>
+      <div style="padding:22px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;gap:10px;align-content:start"><span style="font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-2)">Don't</span><ul style="margin:0;padding-left:18px;display:grid;gap:6px;font-size:16px;color:var(--ink-2)"><li>Repeat the same idea across sections — link to it instead.</li><li>Paragraphs over 90 words.</li><li>Telling the same story twice. Each fact lives in one section; other sections link to it.</li><li>Em dashes. Use a comma, a colon or a new sentence so lines read fluently.</li><li>Stats without a source, or emoji.</li><li>"Passionate", "innovative", "cutting-edge".</li></ul></div>
+    </div>
+  </section>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { theme: 'light' };
+  renderVals() {
+    const theme = this.state.theme;
+    const serif = "'Newsreader',Georgia,serif", sans = "'Source Sans 3',system-ui,sans-serif";
+    return {
+      theme,
+      themeOptions: [['light', 'Light'], ['dark', 'Dark']].map(([v, l]) => ({ label: l, pressed: theme === v, bg: theme === v ? 'var(--ink)' : 'transparent', fg: theme === v ? 'var(--bg)' : 'var(--ink-2)', select: () => this.setState({ theme: v }) })),
+      swatches: [
+        { token: '--bg', css: 'var(--bg)', light: '#FBF8F5', dark: '#111014', use: 'Page paper' },
+        { token: '--surface', css: 'var(--surface)', light: '#FFFFFF', dark: '#1A181F', use: 'Cards, icon buttons' },
+        { token: '--surface-2', css: 'var(--surface-2)', light: '#F4EEE9', dark: '#221F28', use: '"In short" box, hover' },
+        { token: '--ink', css: 'var(--ink)', light: '#2B2529', dark: '#ECE7EA', use: 'Headings, lead, terms' },
+        { token: '--ink-2', css: 'var(--ink-2)', light: '#5F565B', dark: '#B3ACB2', use: 'Body, meta, captions' },
+        { token: '--line', css: 'var(--line)', light: '13% ink', dark: '13% ink', use: 'All rules and borders' },
+        { token: '--pink', css: 'var(--pink)', light: '#C42A78', dark: '#EE72B0', use: 'Kickers, numbers, CTA, focus' },
+        { token: '--yellow', css: 'var(--yellow)', light: '#F6D46B', dark: '#E7C96A', use: '"Now" badge only' },
+        { token: '--yellow-soft', css: 'var(--yellow-soft)', light: '#FCEFC4', dark: '#3A3322', use: 'Active nav item only' },
+        { token: '--marker', css: 'var(--marker)', light: '#FBE39A', dark: 'yellow 32%', use: 'Positioning line only' },
+      ],
+      typeScale: [
+        { token: 'display', spec: 'Newsreader 64 / 1.0 · −0.02em', family: serif, size: '64px', lh: '1', weight: 400, ls: '-0.02em', tt: 'none', color: 'var(--ink)', sample: 'Susana' },
+        { token: 'h2', spec: 'Newsreader 40–44 / 1.08', family: serif, size: '42px', lh: '1.08', weight: 400, ls: '-0.015em', tt: 'none', color: 'var(--ink)', sample: 'Robotics engineering' },
+        { token: 'h3', spec: 'Newsreader 24–26 / 1.2', family: serif, size: '25px', lh: '1.2', weight: 400, ls: '0', tt: 'none', color: 'var(--ink)', sample: 'What shipped' },
+        { token: 'lead', spec: 'Source Sans 21 / 1.5', family: sans, size: '21px', lh: '1.5', weight: 400, ls: '0', tt: 'none', color: 'var(--ink)', sample: 'I lead software products for regulated systems.' },
+        { token: 'body', spec: 'Source Sans 18 / 1.65 · ink-2', family: sans, size: '18px', lh: '1.65', weight: 400, ls: '0', tt: 'none', color: 'var(--ink-2)', sample: 'Real users, operational constraints and good collective decisions.' },
+        { token: 'row', spec: 'Source Sans 16 semibold · 17 regular', family: sans, size: '17px', lh: '1.55', weight: 600, ls: '0', tt: 'none', color: 'var(--ink)', sample: 'Term — explanation' },
+        { token: 'meta', spec: 'Source Sans 15 · ink-2', family: sans, size: '15px', lh: '1.45', weight: 400, ls: '0', tt: 'none', color: 'var(--ink-2)', sample: 'Echosens · Paris · from October 2026' },
+        { token: 'kicker', spec: 'Source Sans 13 semibold · +0.08em caps', family: sans, size: '13px', lh: '1.4', weight: 600, ls: '0.08em', tt: 'uppercase', color: 'var(--pink)', sample: '06 · Product & medtech' },
+      ],
+      spaces: [
+        { token: 'space-1', px: 4, use: 'Icon to label' }, { token: 'space-2', px: 8, use: 'Inside "In short" box' }, { token: 'space-3', px: 12, use: 'Card grids, kicker → title' },
+        { token: 'space-4', px: 16, use: 'Paragraph spacing' }, { token: 'space-5', px: 24, use: 'Row columns, box padding' }, { token: 'space-6', px: 32, use: 'Between blocks in a section' },
+        { token: 'space-7', px: 48, use: 'Page side padding' }, { token: 'space-8', px: 64, use: 'Section → section (design system)' }, { token: 'space-9', px: 96, use: 'Page bottom' },
+      ].map(s => ({ ...s, w: s.px * 2 + 'px' })),
+      a11y: [
+        { term: 'Contrast', text: 'Text ≥ 4.5:1 (achieved ≥ 6.7:1). Non-text UI ≥ 3:1. Yellow is never used as text colour on paper.' },
+        { term: 'Targets', text: 'Every interactive element ≥ 44 × 44px (nav rows 44, icon buttons 48, CTA 48, summaries 64).' },
+        { term: 'Focus', text: '3px pink outline, 3px offset, on :focus-visible for every link, button and summary. Never removed.' },
+        { term: 'Section switching', text: 'Every section has its own URL (#bloom, #academia…), so it can be shared and the back button works. Nav links carry aria-current="page"; on change, the H2 receives focus, the page scrolls to top, and a polite live region announces the section.' },
+        { term: 'Languages', text: 'The html lang attribute follows the chosen language (en, fr, es-CO); quotes in another language carry their own lang. The choice is saved, and the first visit follows the browser language.' },
+        { term: 'Structure', text: 'One H1 (name), one H2 per section, H3 for sub-blocks. Landmarks: aside "Intro", nav "Sections", main. Skip link first in tab order.' },
+        { term: 'Lists', text: 'Label rows are <dl>, decisions are <ol>, quotes are <figure><blockquote><figcaption>.' },
+        { term: 'Theme', text: 'Auto follows prefers-color-scheme; Light/Dark override is a 3-button group with aria-pressed, saved to localStorage.' },
+        { term: 'Motion', text: 'Only 150–250ms colour/rotation transitions. All disabled under prefers-reduced-motion.' },
+        { term: 'Images', text: 'Meaningful images get descriptive alt text; decorative card thumbnails use alt="" because the card text says it all.' },
+        { term: 'Zoom & reflow', text: 'Fluid at 320px wide and 200% zoom with no horizontal scroll; clamp() for display sizes.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

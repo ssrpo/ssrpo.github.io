@@ -1,10 +1,15 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import App from './App.tsx'
+import { parsePath } from './site'
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!
+const { lang, id } = parsePath(window.location.pathname)
+const app = (
   <StrictMode>
-    <App />
-  </StrictMode>,
+    <App initialLang={lang} initialId={id} />
+  </StrictMode>
 )
+
+if (root.hasChildNodes()) hydrateRoot(root, app)
+else createRoot(root).render(app)
