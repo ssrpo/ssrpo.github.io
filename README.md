@@ -1,77 +1,70 @@
-# Hi, welcome to my personal website repo
+# Susana Sánchez Restrepo · personal website
 
-I am Susana Sanchez Restrepo, and this repository contains the code for my personal website.
-
-I built this site to share my work in robotics, software, human-centered design, and the broader ecosystem around my projects.
+Source of [suziesr.xyz](https://suziesr.xyz): the portfolio of a PhD in robotics turned Senior Product Owner Software in medtech. It covers case studies in assistive robotics, twelve years of hands-on robotics, writing and community work, in English, French and Spanish.
 
 ## What is in this repo
 
-- A React + TypeScript + Vite single-page portfolio
-- A content-driven personal website with sections for profile, recommendations, robotics work, engagements, publications, and interests
-- A GitHub Actions pipeline for quality checks and deployment
-
-## Tech stack
-
-- React 19
-- TypeScript
-- Vite
-- ESLint (with accessibility rules)
-- Vitest + React Testing Library + jest-axe
-- Lighthouse CI
+- A React 19 + TypeScript + Vite site, **prerendered to 30 static pages** (10 sections × 3 languages) so every page is readable without JavaScript and indexable by search engines.
+- One content file for all copy and translations: `src/content/content.json`.
+- A documented design system and specs in `docs/`, with interactive HTML references in `design/`.
+- GitHub Actions for lint, tests (including `jest-axe`), Lighthouse CI and deployment to GitHub Pages.
 
 ## Project structure
 
-- `src/App.tsx`: app shell and state wiring
-- `src/components/Sidebar.tsx`: left navigation and social links
-- `src/components/SectionContent.tsx`: main section content rendering
-- `src/content/siteContent.tsx`: static content/data
-- `src/types/content.ts`: shared types
-- `src/App.css` and `src/index.css`: styles
-
-## Current site structure
-
-Navigation groups live in `src/types/content.ts` (`navGroups`).
-
-- Profile
-  - `What I do`: profile, impact strip and scope of work
-  - `What They Say`: selected collaborator recommendations
-  - `User-Centered Development`: how users shape technical and product decisions
-  - `Work & Writing`: open-source software, thesis, writing, talks and videos
-- Product & medtech
-  - `Current Role`: Senior Product Owner Software at Echosens, Paris
-  - `Bloom Case Study`: the Extender operator interface as a product case study
-  - `Assistive & Medical Devices`: PhD, Extender and the assistive robotics thread
-- Engineering background
-  - `Robotics Engineering`: industrial, logistics, humanoid and social robotics work
-- Community
-  - `Engagements`: France 2030, ROSCon France and the Paris Cybathlétique Club
-  - `Le Cercle des Robots Disparus`: dedicated association project section
-  - `Interests`: creative and personal threads connected to the work
+```
+src/
+  App.tsx                 app shell: routing, theme, focus management
+  main.tsx                client entry (hydrates prerendered HTML)
+  entry-server.tsx        server render, <head> tags, JSON-LD, sitemap
+  site.ts                 content access, URL scheme, helpers
+  components/
+    Sidebar.tsx           intro, section nav, contact, theme and language
+    Blocks.tsx            every content block type
+    RichText.tsx          [label](url) links inside copy
+  content/
+    content.json          all copy, EN / FR / ES
+    types.ts              content types
+  styles/
+    tokens.css            design tokens, light and dark
+    app.css               components and layout
+scripts/prerender.mjs     writes dist/<lang>/<section>/index.html, sitemap, robots, 404
+public/                   favicon, share image, assets/ (images, CV)
+docs/
+  DESIGN_SYSTEM.md        tokens, rules, components, accessibility
+  DESIGN_SPECS.md         architecture, URLs, behaviour, build and SEO
+  CONTENT_GUIDE.md        how to edit copy and translations
+design/                   HTML design references (open in a browser)
+```
 
 ## Run locally
 
-1. Install dependencies
-   - `npm install`
-2. Start dev server
-   - `npm run dev`
-3. Run quality checks
-   - `npm run lint`
-   - `npm run test`
-   - `npm run build`
-   - `npm run lighthouse:ci` (requires Chrome locally; always runs in CI)
+```bash
+npm install
+npm run dev          # http://localhost:5173
+npm run lint
+npm run test
+npm run build        # client + prerender into dist/
+npm run preview      # serve dist/
+npm run lighthouse:ci
+```
 
 ## CI and deployment
 
-- Pull requests run checks from `.github/workflows/ci.yml`.
-- Pull requests also run Lighthouse checks from `.github/workflows/lighthouse.yml`.
-- Pushes to `main` deploy the site to GitHub Pages with `.github/workflows/deploy.yml`.
+- Pull requests run `.github/workflows/ci.yml` and the Lighthouse checks.
+- Pushes to `main` build, prerender and deploy `dist/` to GitHub Pages with `.github/workflows/deploy.yml`.
+- After the first deploy, submit `https://suziesr.xyz/sitemap.xml` in Google Search Console (see `docs/DESIGN_SPECS.md`).
 
 ## Accessibility
 
-- Section switches announce changes and move focus to section headings.
-- Automated accessibility checks run in tests using `jest-axe`.
-- ESLint enforces JSX accessibility rules.
+WCAG 2.2 AA is the floor:
+
+- 44 px targets, visible focus and one h1 per page;
+- real links with shareable URLs;
+- focus moves to the heading on navigation, and changes are announced;
+- `lang` on every page and quote;
+- `prefers-reduced-motion` respected;
+- automated axe checks on all 30 pages.
 
 ## Contributing
 
-If you want to contribute, please check `CONTRIBUTING.md`.
+See `CONTRIBUTING.md`.

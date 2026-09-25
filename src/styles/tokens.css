@@ -1,0 +1,75 @@
+/* Design tokens. Source of truth: docs/DESIGN_SYSTEM.md */
+:root {
+  --bg: #fbf8f5;
+  --surface: #ffffff;
+  --surface-2: #f4eee9;
+  --ink: #2b2529;
+  --ink-2: #5f565b;
+  --line: rgba(43, 37, 41, 0.13);
+  --pink: #c42a78;
+  --on-pink: #ffffff;
+  --pink-soft: #fbe4ef;
+  --yellow: #f6d46b;
+  --yellow-soft: #fcefc4;
+  --on-yellow: #2b2529;
+  --marker: #fbe39a;
+
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --radius-control: 8px;
+  --radius-badge: 10px;
+  --radius-card: 14px;
+  --radius-pill: 999px;
+
+  --target: 44px;
+  --focus: 3px solid var(--pink);
+  --ease: 0.18s ease;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --bg: #111014;
+  --surface: #1a181f;
+  --surface-2: #221f28;
+  --ink: #ece7ea;
+  --ink-2: #b3acb2;
+  --line: rgba(236, 231, 234, 0.13);
+  --pink: #ee72b0;
+  --on-pink: #1a1618;
+  --pink-soft: #3a1c2c;
+  --yellow: #e7c96a;
+  --yellow-soft: #3a3322;
+  --on-yellow: #1a1618;
+  --marker: rgba(231, 201, 106, 0.32);
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #111014;
+    --surface: #1a181f;
+    --surface-2: #221f28;
+    --ink: #ece7ea;
+    --ink-2: #b3acb2;
+    --line: rgba(236, 231, 234, 0.13);
+    --pink: #ee72b0;
+    --on-pink: #1a1618;
+    --pink-soft: #3a1c2c;
+    --yellow: #e7c96a;
+    --yellow-soft: #3a3322;
+    --on-yellow: #1a1618;
+    --marker: rgba(231, 201, 106, 0.32);
+    color-scheme: dark;
+  }
+}
