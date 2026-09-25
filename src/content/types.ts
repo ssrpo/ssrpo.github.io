@@ -72,7 +72,6 @@ export interface UiStrings {
   menu: string
   menuClose: string
   cta: string
-  email: string
   cv: string
   inShort: string
   caseStudy: string

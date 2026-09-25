@@ -22,7 +22,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
 .skip:focus-visible { left: 20px; top: 16px; color: var(--bg); }
 
 /* Layout */
-.page { max-width: 1440px; margin: 0 auto; padding: 56px 48px var(--space-9) 72px; position: relative; }
+.page { max-width: 1440px; margin: 0 auto; padding: 96px 48px var(--space-9) 72px; position: relative; }
 .layout { display: grid; grid-template-columns: clamp(320px, 30vw, 420px) minmax(0, 1fr); gap: clamp(56px, 8vw, 128px); align-items: start; }
 .content { min-width: 0; max-width: 780px; }
 
@@ -62,7 +62,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex]:focus-v
 .icon-btn svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; }
 .cv-link { display: inline-flex; align-self: flex-start; align-items: center; gap: var(--space-2); min-height: var(--target); margin-top: var(--space-2); font-size: 15px; font-weight: 600; }
 
-.switches { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--space-4); }
+.switches { position: absolute; top: 20px; right: 48px; z-index: 2; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
 .seg { display: inline-flex; padding: 4px; border-radius: var(--radius-pill); border: 1px solid var(--line); background: var(--surface); gap: 2px; }
 .seg button, .seg a { min-height: 40px; min-width: var(--target); padding: 0 var(--space-3); border-radius: var(--radius-pill); border: 0; background: transparent; color: var(--ink-2); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
 .seg [aria-pressed='true'], .seg [aria-current='true'] { background: var(--ink); color: var(--bg); }
@@ -182,7 +182,8 @@ details[open] > summary .chev { transform: rotate(180deg); }
   .quotes, .cards, .families, .figure.shots > div { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 767px) {
-  .page { padding: 28px 20px 64px; }
+  .page { padding: 20px 20px 64px; }
+  .switches { position: static; margin-bottom: var(--space-5); }
   .layout { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
   .portrait { float: none; margin: 0 0 20px; }
   .pub { grid-template-columns: minmax(0, 1fr); }

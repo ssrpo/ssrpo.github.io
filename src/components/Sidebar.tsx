@@ -1,30 +1,22 @@
 import type { MouseEvent } from 'react'
 import type { Lang, LangContent } from '../content/types'
-import { EMAIL_PARTS, GROUP_ORDER, LANGS, LANG_LABELS, PERSON_LINKS, pathFor } from '../site'
+import { GROUP_ORDER, PERSON_LINKS, pathFor } from '../site'
 
-export type ThemePref = 'system' | 'light' | 'dark'
 
 interface Props {
   c: LangContent
   lang: Lang
   activeId: string
   menuOpen: boolean
-  theme: ThemePref
   onToggleMenu: () => void
   onNavigate: (event: MouseEvent<HTMLAnchorElement>, href: string) => void
-  onTheme: (t: ThemePref) => void
 }
 
 const num = (i: number) => String(i + 1).padStart(2, '0')
 
-export function Sidebar({ c, lang, activeId, menuOpen, theme, onToggleMenu, onNavigate, onTheme }: Props) {
+export function Sidebar({ c, lang, activeId, menuOpen, onToggleMenu, onNavigate }: Props) {
   const ui = c.ui
   const activeIndex = c.sections.findIndex((s) => s.id === activeId)
-  const openMail = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault()
-    window.location.href = 'mailto:' + EMAIL_PARTS.join('@')
-  }
-
   return (
     <aside className="sidebar" aria-label="Intro">
       <p className="positioning">{ui.positioning}</p>
@@ -80,12 +72,6 @@ export function Sidebar({ c, lang, activeId, menuOpen, theme, onToggleMenu, onNa
           {ui.cta}
           <span aria-hidden="true">↗</span>
         </a>
-        <a className="icon-btn" href="/#contact" onClick={openMail} aria-label={ui.email}>
-          <svg viewBox="0 0 24 24" aria-hidden="true" className="stroke">
-            <rect x="3" y="5" width="18" height="14" rx="2" />
-            <path d="m4 7 8 6 8-6" />
-          </svg>
-        </a>
         <a className="icon-btn" href={PERSON_LINKS.scholar} target="_blank" rel="noreferrer" aria-label="Google Scholar">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm0 10.5L5.2 9 12 5.5 18.8 9 12 13.5ZM6 16.5v2.1C6 20.99 8.69 22 12 22s6-1.01 6-3.4v-2.1l-6 3.2-6-3.2Z" />
@@ -107,36 +93,6 @@ export function Sidebar({ c, lang, activeId, menuOpen, theme, onToggleMenu, onNa
         <span aria-hidden="true">↓</span>
       </a>
 
-      <div className="switches">
-        <div className="seg" role="group" aria-label={ui.theme}>
-          {(
-            [
-              ['system', ui.auto],
-              ['light', ui.light],
-              ['dark', ui.dark],
-            ] as [ThemePref, string][]
-          ).map(([v, label]) => (
-            <button key={v} type="button" aria-pressed={theme === v} onClick={() => onTheme(v)}>
-              {label}
-            </button>
-          ))}
-        </div>
-        <nav className="seg" aria-label={ui.language}>
-          {LANGS.map((l) => (
-            <a
-              key={l}
-              href={pathFor(l, activeId)}
-              hrefLang={LANG_LABELS[l].hreflang}
-              lang={LANG_LABELS[l].hreflang}
-              aria-label={LANG_LABELS[l].name}
-              aria-current={l === lang ? 'true' : undefined}
-              onClick={(e) => onNavigate(e, pathFor(l, activeId))}
-            >
-              {LANG_LABELS[l].short}
-            </a>
-          ))}
-        </nav>
-      </div>
     </aside>
   )
 }
