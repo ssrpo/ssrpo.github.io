@@ -10,7 +10,6 @@ export const LANG_LABELS: Record<Lang, { short: string; name: string; hreflang: 
   es: { short: 'ES', name: 'Español (Colombia)', hreflang: 'es-CO' },
 }
 export const GROUP_ORDER = ['profile', 'product', 'eng', 'community'] as const
-export const EMAIL_PARTS = ['susisanchezr', 'gmail.com']
 
 export const PERSON_LINKS = {
   linkedin: 'https://www.linkedin.com/in/susanasanchezr/',

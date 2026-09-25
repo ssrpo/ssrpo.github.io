@@ -3,7 +3,8 @@ import type { MouseEvent } from 'react'
 import { BlockView } from './components/Blocks'
 import { RichText } from './components/RichText'
 import { Sidebar } from './components/Sidebar'
-import type { ThemePref } from './components/Sidebar'
+import { Switches } from './components/Switches'
+import type { ThemePref } from './components/Switches'
 import type { Lang } from './content/types'
 import { findSection, langContent, parsePath, pathFor, sectionTitle } from './site'
 import './styles/tokens.css'
@@ -97,16 +98,15 @@ export default function App({ initialLang, initialId }: Props) {
   return (
     <div className="page">
       <a href="#content" className="skip">{ui.skip}</a>
+      <Switches ui={ui} lang={route.lang} activeId={section.id} theme={theme} onNavigate={onNavigate} onTheme={onTheme} />
       <div className="layout">
         <Sidebar
           c={c}
           lang={route.lang}
           activeId={section.id}
           menuOpen={menuOpen}
-          theme={theme}
           onToggleMenu={() => setMenuOpen((o) => !o)}
           onNavigate={onNavigate}
-          onTheme={onTheme}
         />
         <main id="content" className="content">
           <p className="sr-only" aria-live="polite">{ui.showing + section.title}</p>

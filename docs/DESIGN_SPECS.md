@@ -35,16 +35,16 @@ Ten sections in four groups. Every section exists in English, French and Spanish
 ## Page anatomy
 
 ```
-┌───────────── sidebar (sticky) ─────────────┐┌──────── main ────────┐
+                                   (Auto|Light|Dark)  (EN|FR|ES)   top right
+┌───────────── sidebar ──────────────────────┐┌──────── main ────────┐
 │ positioning kicker                         ││ kicker               │
 │ Susana / Sánchez Restrepo   (display)      ││ h1 section title     │
 │ pitch with marker highlight                ││ meta                 │
 │ ● Now: role                                ││ In short             │
 │ [Sections ▾]        (mobile only)          ││ blocks…              │
-│ nav: 4 groups × numbered links             ││ collapsibles         │
-│ [Let's talk on LinkedIn ↗] ✉ 🎓 GH IG      ││ ← previous  next →   │
+│ nav: 4 groups × numbered links  (sticky)   ││ collapsibles         │
+│ [Let's talk on LinkedIn ↗] 🎓 GH IG        ││ ← previous  next →   │
 │ Download CV ↓                              │└──────────────────────┘
-│ (Auto|Light|Dark)  (EN|FR|ES)              │
 └────────────────────────────────────────────┘
 ```
 
@@ -80,7 +80,6 @@ Types are in `src/content/types.ts`.
 | Theme switch | Auto removes `data-theme`; Light and Dark set it and save it. |
 | Mobile "Sections" button | Toggles the nav (`aria-expanded`); choosing a section closes it. |
 | Collapsible | Native `<details>`; the chevron rotates in 200 ms. |
-| Email button | Builds `mailto:` on click; the address is not written in the HTML. |
 | CV link | Downloads `assets/CV_Susana_Sanchez_Restrepo.pdf` (French version). |
 
 ## Build and findability

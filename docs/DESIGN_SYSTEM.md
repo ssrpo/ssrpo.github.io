@@ -94,10 +94,11 @@ Rules:
 
 | Breakpoint | Rules |
 | --- | --- |
-| ≥ 1024 | Page max 1440, padding 56 / 48 / 96 / 72. Sticky sidebar `clamp(320px, 30vw, 420px)`. Gap `clamp(56px, 8vw, 128px)`. Content max 780. |
+| ≥ 1024 | Page max 1440, padding 96 / 48 / 96 / 72. Sidebar `clamp(320px, 30vw, 420px)`. Gap `clamp(56px, 8vw, 128px)`. Content max 780. |
+| ≥ 768 wide and ≥ 650 tall | The sidebar scrolls with the page and never scrolls on its own. Only the section list is sticky, 24 px from the top, and it is pinned only when all of it fits on screen. The contact buttons and CV sit at the foot of the sidebar, level with the pager. The theme and language switches sit at the top right of the page, in their own band above the content. |
 | ≤ 1100 | Label rows and timeline stack (term above text). |
 | 768–1023 | Sidebar `clamp(280px, 36vw, 380px)`, gap 48. Two-column grids (quotes, cards, families, screenshot pairs) collapse to one. |
-| < 768 | Single column, sidebar unstuck, page padding 20. The section list collapses behind a "Sections" button that shows the current section. Publication thumbnails go 16:9. Pager stacks. |
+| < 768 | Single column, sidebar unstuck, page padding 20. The theme and language switches open the page, right-aligned. The section list collapses behind a "Sections" button that shows the current section. Publication thumbnails go 16:9. Pager stacks. |
 
 ## 5. Components
 
@@ -115,7 +116,7 @@ Rules:
 | **Figure** | Radius 14, 1 px line, 14 px caption in ink-2 that credits the source. Screenshot pairs crop to 16:10 from the top left. |
 | **Quote** | Italic Newsreader 20–24. Name in 15 semibold ink, then role. The original language is kept and marked with `lang`. |
 | **Primary CTA** | "Let's talk on LinkedIn ↗", 48 px pink pill. Only one on the site, at the bottom of the sidebar next to the icon buttons. |
-| **Icon button** | 48 × 48, radius 10, 1 px line. Always has an `aria-label`. Email is assembled on click so the address is not in the HTML. |
+| **Icon button** | 48 × 48, radius 10, 1 px line. Always has an `aria-label`. |
 | **Segmented control** | Theme (Auto, Light, Dark) and language (EN, FR, ES). Pill container, 40 px buttons with a 44 px minimum width. The selected item is ink on paper. Theme buttons use `aria-pressed`; language links use `aria-current`, `hreflang` and their own `lang`. |
 | **Pager** | Previous and next cards at the end of each section: 13 px caps label, then the section name in Newsreader 21. |
 
